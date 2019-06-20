@@ -9,6 +9,9 @@ const routes: Routes = [
     {
         path: 'nav-bar',
         component: NavBarComponent
+    },{
+        path: 'top-bar',
+        component: TopBarComponent
     }
 
 ];
