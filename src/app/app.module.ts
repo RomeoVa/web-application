@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 
+import { Routes, RouterModule } from '@angular/router';
+
 const routes: Routes = [
     {
         path: 'nav-bar',
@@ -24,8 +26,10 @@ const routes: Routes = [
     TopBarComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

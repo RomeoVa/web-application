@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "./registro";
-@import "./sb-admin-2";
+@import "~bootstrap/scss/bootstrap";
+@import "scss/registro";
+@import "scss/sb-admin-2";
 
 .container{
   text-align:center;
