@@ -1,12 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="wrapper">
   <nav-bar></nav-bar>
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <top-bar></top-bar>
 
-  <top-bar></top-bar>
-
-
-
-   <div class="container">
-          <router-outlet></router-outlet>
-      </div>
+       <div class="container">
+              <router-outlet></router-outlet>
+        </div>
+        
+    </div>
+  </div>
 </div>
