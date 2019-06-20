@@ -3,11 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+
+const routes: Routes = [
+    {
+        path: 'nav-bar',
+        component: NavBarComponent
+    }
+
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule
