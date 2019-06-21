@@ -1,10 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap";
-@import "scss/registro";
 @import "scss/sb-admin-2";
+
+.big-logo{
+  font-size: 15em;
+}
 
 .container{
   text-align:center;
+}
+
+.form-control{
+  height: 51.6px;
+}
+
+.card-header{
+  background-color: $white;
+  border-bottom: none;
+  padding: .0rem 1.25rem;
 }
 
 .bg-gradient-primary {

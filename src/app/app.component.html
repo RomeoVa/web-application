@@ -1,5 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<!-- Page Wrapper -->
+
+<!--<div *ngIf="!isLoggedIn">
+  <body class="bg-gradient-primary">
+    <div class="container">
+      <login (LoggedInEvent) = "leDiClick($event)"></login>
+    </div>
+  </body>
+</div>-->
+
 <div id="wrapper">
   <nav-bar></nav-bar>
   <!-- Content Wrapper -->
@@ -10,7 +18,7 @@
 
        <div class="container">
               <router-outlet></router-outlet>
-       </div>
+        </div>
 
     </div>
     <!-- End of Main Content -->
