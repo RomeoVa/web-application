@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'web-application';
   isLoggedIn = false;
 
-  leDiClick($event){
-    this.isLoggedIn = true;
+  leDiClick($event:any){
+    this.isLoggedIn = ($event);
     console.log("click", $event);
   }
 

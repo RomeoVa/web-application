@@ -7,6 +7,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { ReporteFacturaComponent } from './components/reporte-factura/reporte-factura.component';
 import { ReporteClientesComponent } from './components/reporte-clientes/reporte-clientes.component';
 import { MisfacturasComponent } from './components/misfacturas/misfacturas.component';
@@ -51,7 +52,7 @@ const routes: Routes = [
     BrowserModule
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
