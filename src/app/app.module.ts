@@ -11,11 +11,12 @@ import { ReporteFacturaComponent } from './components/reporte-factura/reporte-fa
 import { ReporteClientesComponent } from './components/reporte-clientes/reporte-clientes.component';
 import { MisfacturasComponent } from './components/misfacturas/misfacturas.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     {
-        path: 'menu',
-        component: MenuComponent
+          path: 'menu',
+          component: MenuComponent
     }
     ,{
         path: 'reporte-factura',
@@ -41,7 +42,8 @@ const routes: Routes = [
     ReporteFacturaComponent,
     ReporteClientesComponent,
     MisfacturasComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

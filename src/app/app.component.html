@@ -1,5 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="wrapper">
+
+<div *ngIf="!isLoggedIn">
+  <body class="bg-gradient-primary">
+    <div class="container">
+      <login></login>
+    </div>
+  </body>
+</div>
+
+<div id="wrapper" *ngIf="isLoggedIn">
   <nav-bar></nav-bar>
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">

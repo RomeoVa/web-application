@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-application';
+  isLoggedIn = false;
+
+  leDiClick($event){
+    this.isLoggedIn = true;
+    console.log("click", $event);
+  }
+
 }
