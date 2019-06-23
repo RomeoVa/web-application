@@ -1,34 +1,71 @@
 <div class="container">
     <h1>Perfíl</h1>
-    <form #heroForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #perfilForm="ngForm">
+      {{perfilForm.value | json}}
+      <hr/>
+      {{perfilModel | json}}
       <div class="form-group">
         <label for="name">Nombre</label>
         <input type="text" class="form-control" id="name"
-                required
-                [(ngModel)]="model.name" name="name"
-                #name="ngModel">
+               required
+               [(ngModel)]="perfilModel.nombre" name="name"
+               #name="ngModel">
         <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
-           Name is required
+           Nombre is required
         </div>
       </div>
 
       <div class="form-group">
-        <label for="razon-social">Razón Social</label>
-        <input type="text" class="form-control" id="razon-social" required>
+        <label for="razonSocial">Razón Social</label>
+        <input type="text" class="form-control" id="razonSocial"
+               required
+               [(ngModel)]="perfilModel.razon_social" name="razonSocial"
+               #razonSocial="ngModel">
+        <div [hidden]="razonSocial.valid || razonSocial.pristine"
+             class="alert alert-danger">
+             Razón Social is required
+        </div>
       </div>
 
       <div class="form-group">
         <label for="rfc">RFC</label>
-        <input type="text" class="form-control" id="rfc" required>
+        <input type="text" class="form-control" id="rfc"
+                required
+                [(ngModel)]="perfilModel.rfc" name="rfc"
+                #rfc="ngModel">
+         <div [hidden]="rfc.valid || rfc.pristine"
+              class="alert alert-danger">
+              RFC is required
+         </div>
       </div>
 
       <div class="form-group">
         <label for="correo">Correo</label>
-        <input type="text" class="form-control" id="correo" required>
+        <input type="text" class="form-control" id="correo"
+                required
+                [(ngModel)]="perfilModel.correo" name="correo"
+                #correo="ngModel">
+         <div [hidden]="correo.valid || correo.pristine"
+              class="alert alert-danger">
+              Correo is required
+         </div>
       </div>
 
-      <button type="submit" class="btn btn-success">Editar</button>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" id="password"
+                required
+                [(ngModel)]="perfilModel.contrasena" name="password"
+                #password="ngModel">
+         <div [hidden]="password.valid || password.pristine"
+              class="alert alert-danger">
+              Contraseña is required
+         </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              [disabled]="!perfilForm.form.valid">Editar</button>
 
     </form>
 </div>
