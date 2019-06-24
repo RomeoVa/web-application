@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
+import { TablaFacturasComponent } from './components/tabla-facturas/tabla-facturas.component';
 
 const routes: Routes = [
     {
@@ -62,7 +63,8 @@ const routes: Routes = [
     FooterComponent,
     RegistroClientesComponent,
     PerfilComponent,
-    RegistroEmpresaComponent
+    RegistroEmpresaComponent,
+    TablaFacturasComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

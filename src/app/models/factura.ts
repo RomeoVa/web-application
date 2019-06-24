@@ -15,6 +15,6 @@ export class Factura {
     public impuesto: number,
     public total: number,
     public firmaDigital: string,
-    public selloDigital: string,
+    public selloDigital: string
   ) {  }
 }
