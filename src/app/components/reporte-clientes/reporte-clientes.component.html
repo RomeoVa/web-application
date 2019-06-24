@@ -41,99 +41,15 @@
               <table id="client-table">
                 <thead>
                   <tr>
-                    <th>Razón Social</th>
-                    <th>Fecha de ingreso</th>
                     <th>RFC</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr>
-                    <td>Peter</td>
-                    <td>22/08/18</td>
-                    <td>VECJ880326 XXX</td>
-                    <td id="client-btn">
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-info btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span class="text">Ver</span>
-                      </a>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-trash"></i>
-                        </span>
-                        <span class="text">Eliminar</span>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Lois</td>
-                    <td>22/08/18</td>
-                    <td>VECJ880326 XXX</td>
-                    <td>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-info btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span class="text">Ver</span>
-                      </a>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-trash"></i>
-                        </span>
-                        <span class="text">Eliminar</span>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Joe</td>
-                    <td>22/08/18</td>
-                    <td>VECJ880326 XXX</td>
-                    <td>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-info btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span class="text">Ver</span>
-                      </a>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-trash"></i>
-                        </span>
-                        <span class="text">Eliminar</span>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Cleveland</td>
-                    <td>22/08/18</td>
-                    <td>VECJ880326 XXX</td>
-                    <td>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-info btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span class="text">Ver</span>
-                      </a>
-                      <div class="my-2"></div>
-                      <a href="#" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-trash"></i>
-                        </span>
-                        <span class="text">Eliminar</span>
-                      </a>
-                    </td>
-                  </tr>
-
+                  <tr *ngFor="let cliente of clientes" tabla-clientes [cliente]="cliente"></tr>
                 </tbody>
 
               </table>
