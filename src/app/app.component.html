@@ -1,14 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<!--<div *ngIf="!isLoggedIn">
+<div *ngIf="!isLoggedIn">
   <body class="bg-gradient-primary">
     <div class="container">
       <login (LoggedInEvent) = "leDiClick($event)"></login>
     </div>
   </body>
-</div>-->
+</div>
 
-<div id="wrapper">
+<div id="wrapper" *ngIf="isLoggedIn">
   <nav-bar></nav-bar>
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">

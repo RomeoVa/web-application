@@ -7,16 +7,19 @@ import {CookieService} from 'angular2-cookie/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private _cookieService:CookieService){}
+  isLoggedIn:any;
+  constructor(private _cookieService:CookieService){
+    this.isLoggedIn = _cookieService;
+  }
 
   @Output() LoggedInEvent = new EventEmitter<boolean>();
-  isLoggedIn = false;
+
+  ngOnInit() {
+    this._cookieService.put("test", "test");
+  }
 
   getCookie(key: string){
     return this._cookieService.get(key);
-  }
-
-  ngOnInit() {
   }
 
   enviar(){

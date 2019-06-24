@@ -45,9 +45,6 @@ const routes: Routes = [
         path: 'app-footer',
         component: FooterComponent
     },{
-        path: 'Registro-Clientes',
-        component: RegistroClientesComponent
-    },{
         path: 'perfil',
         component: PerfilComponent
       },
