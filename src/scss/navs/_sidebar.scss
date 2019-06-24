@@ -85,7 +85,7 @@
     cursor: pointer;
     &::after {
       font-weight: 900;
-      content: '\f104';
+      content: none;
       font-family: 'Font Awesome 5 Free';
       margin-right: 0.1rem;
     }
@@ -100,7 +100,7 @@
     width: 0 !important;
     overflow: hidden;
     #sidebarToggle::after {
-      content: '\f105';
+      content: none;
       font-family: 'Font Awesome 5 Free';
       margin-left: 0.25rem;
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registro-empresa',
+  selector: 'registro-empresa',
   templateUrl: './registro-empresa.component.html',
   styleUrls: ['./registro-empresa.component.scss']
 })

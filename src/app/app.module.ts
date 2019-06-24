@@ -39,12 +39,15 @@ const routes: Routes = [
         path: 'app-footer',
         component: FooterComponent
     },{
-        path: 'Registro-Clientes',
+        path: 'registro-clientes',
         component: RegistroClientesComponent
     },{
         path: 'perfil',
         component: PerfilComponent
-      }
+      },{
+          path: 'registro-empresa',
+          component: PerfilComponent
+        }
 
 ];
 
