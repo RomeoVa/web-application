@@ -1,0 +1,144 @@
+<div class="container">
+    <h1>Generar Factura</h1>
+    <form (ngSubmit)="onSubmit(); facturaForm.reset()" #facturaForm="ngForm">
+      <div class="form-group">
+        <label for="proveedor">Proveedor</label>
+        <input type="text" class="form-control" id="proveedor"
+               required
+               [(ngModel)]="facturaModel.proveedor" name="proveedor"
+               #proveedor="ngModel">
+        <div [hidden]="proveedor.valid || proveedor.pristine"
+             class="alert alert-danger">
+           Proveedor is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion_proveedor">Dirección Proveedor</label>
+        <input type="text" class="form-control" id="direccion_proveedor"
+                required
+                [(ngModel)]="facturaModel.direccion_proveedor" name="direccion_proveedor"
+                #direccion_proveedor="ngModel">
+         <div [hidden]="direccion_proveedor.valid || direccion_proveedor.pristine"
+              class="alert alert-danger">
+              Dirección is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rfc_proveedor">Rfc proveedor</label>
+        <input type="text" class="form-control" id="rfc_proveedor"
+                required
+                [(ngModel)]="facturaModel.rfc_proveedor" name="rfc_proveedor"
+                #rfc_proveedor="ngModel">
+         <div [hidden]="rfc_proveedor.valid || rfc_proveedor.pristine"
+              class="alert alert-danger">
+              RFC proveedor is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cliente">Cliente</label>
+        <select class="form-control" id="cliente"
+           required
+           [(ngModel)]="facturaModel.cliente" name="cliente"
+           #cliente="ngModel">
+    	    <option></option>
+          <option *ngFor="let cliente of clientes" [value]="cliente">{{cliente}}</option>
+
+        </select>
+        <div [hidden]="cliente.valid || cliente.pristine"
+             class="alert alert-danger">
+             Cliente is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion_cliente">Dirección Cliente</label>
+        <input type="text" class="form-control" id="direccion_cliente"
+                required
+                [(ngModel)]="facturaModel.direccion_cliente" name="direccion_cliente"
+                #direccion_cliente="ngModel">
+         <div [hidden]="direccion_cliente.valid || direccion_cliente.pristine"
+              class="alert alert-danger">
+              Dirección is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rfc_Cliente">Rfc cliente</label>
+        <input type="text" class="form-control" id="rfc_Cliente"
+                required
+                [(ngModel)]="facturaModel.rfc_Cliente" name="rfc_Cliente"
+                #rfc_Cliente="ngModel">
+         <div [hidden]="rfc_Cliente.valid || rfc_Cliente.pristine"
+              class="alert alert-danger">
+              RFC cliente is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" class="form-control" id="fecha"
+                required
+                [(ngModel)]="facturaModel.fecha" name="fecha"
+                #fecha="ngModel">
+         <div [hidden]="fecha.valid || fecha.pristine"
+              class="alert alert-danger">
+              Fecha cliente is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="impuesto">Impuesto</label>
+        <input type="text" class="form-control" id="impuesto"
+                required
+                [(ngModel)]="facturaModel.impuesto" name="impuesto"
+                #impuesto="ngModel">
+         <div [hidden]="impuesto.valid || impuesto.pristine"
+              class="alert alert-danger">
+              Impuesto is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="total">Total</label>
+        <input type="text" class="form-control" id="total"
+                required
+                [(ngModel)]="facturaModel.total" name="total"
+                #total="ngModel">
+         <div [hidden]="total.valid || total.pristine"
+              class="alert alert-danger">
+              Total is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="firmaDigital">Firma Digital</label>
+        <input type="text" class="form-control" id="firmaDigital"
+                required
+                [(ngModel)]="facturaModel.firmaDigital" name="firmaDigital"
+                #firmaDigital="ngModel">
+         <div [hidden]="firmaDigital.valid || firmaDigital.pristine"
+              class="alert alert-danger">
+              Firma Digital is required
+         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="selloDigital">Sello Digital</label>
+        <input type="text" class="form-control" id="selloDigital"
+                required
+                [(ngModel)]="facturaModel.selloDigital" name="selloDigital"
+                #selloDigital="ngModel">
+         <div [hidden]="selloDigital.valid || selloDigital.pristine"
+              class="alert alert-danger">
+              Sello Digital is required
+         </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              [disabled]="!facturaForm.form.valid" (click)="formulario.reset();">Crear</button>
+
+    </form>
+</div>

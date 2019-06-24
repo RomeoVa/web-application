@@ -1,9 +1,6 @@
 <div class="container">
-    <h1>Perfíl</h1>
+    <h1>Perfil</h1>
     <form (ngSubmit)="onSubmit()" #perfilForm="ngForm">
-      {{perfilForm.value | json}}
-      <hr/>
-      {{perfilModel | json}}
       <div class="form-group">
         <label for="name">Nombre</label>
         <input type="text" class="form-control" id="name"

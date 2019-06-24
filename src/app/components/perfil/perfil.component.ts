@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Empresa} from '../../models/empresa'
 
 @Component({
-  selector: 'app-perfil',
+  selector: 'perfil',
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.scss']
 })
