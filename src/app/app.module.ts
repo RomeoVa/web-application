@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import {ChartsModule} from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -22,6 +23,7 @@ import { TablaFacturasComponent } from './components/tabla-facturas/tabla-factur
 import { TablaClientesComponent } from './components/tabla-clientes/tabla-clientes.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
+import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 
 const routes: Routes = [
     {
@@ -78,13 +80,15 @@ const routes: Routes = [
     TablaFacturasComponent,
     TablaClientesComponent,
     FacturaComponent,
-    GenerarFacturaComponent
+    GenerarFacturaComponent,
+    ChartPieComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     AngularFontAwesomeModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ChartsModule
   ],
   exports:[RouterModule],
   providers: [CookieService],
