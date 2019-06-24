@@ -18,6 +18,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroClientesComponent } from './components/registro-clientes/registro-clientes.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
+import { TablaFacturasComponent } from './components/tabla-facturas/tabla-facturas.component';
+import { TablaClientesComponent } from './components/tabla-clientes/tabla-clientes.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
 
 const routes: Routes = [
     {
@@ -39,15 +43,17 @@ const routes: Routes = [
         path: 'app-footer',
         component: FooterComponent
     },{
-        path: 'registro-clientes',
-        component: RegistroClientesComponent
-    },{
         path: 'perfil',
         component: PerfilComponent
-      },{
-          path: 'registro-empresa',
-          component: PerfilComponent
-        }
+      },
+      {
+        path: 'factura',
+        component: FacturaComponent
+      },
+      {
+        path: 'generar-factura',
+        component: GenerarFacturaComponent
+      }
 
 ];
 
@@ -65,7 +71,11 @@ const routes: Routes = [
     FooterComponent,
     RegistroClientesComponent,
     PerfilComponent,
-    RegistroEmpresaComponent
+    RegistroEmpresaComponent,
+    TablaFacturasComponent,
+    TablaClientesComponent,
+    FacturaComponent,
+    GenerarFacturaComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

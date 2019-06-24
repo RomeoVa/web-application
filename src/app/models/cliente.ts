@@ -1,11 +1,10 @@
-export class Empresa {
+export class Cliente {
 
   constructor(
     public nombre: string,
-    public razon_social: string,
+    public apellido: string,
     public rfc: string,
     public correo: string,
     public contrasena: string
   ) {  }
-
 }
