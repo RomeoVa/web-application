@@ -12,4 +12,8 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  collapse(){
+    document.getElementById("accordionSidebar").style.width = "200px";
+  }
+
 }

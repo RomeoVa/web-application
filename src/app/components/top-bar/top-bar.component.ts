@@ -12,4 +12,14 @@ export class TopBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  collapse(){
+    if (document.getElementById("accordionSidebar").style.width = "250px"){
+      document.getElementById("accordionSidebar").style.width = "0px";
+    }else {
+      document.getElementById("accordionSidebar").style.width = "250px";
+    }
+
+  }
+
+
 }
