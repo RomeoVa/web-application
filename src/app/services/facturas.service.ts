@@ -111,6 +111,22 @@ export class FacturasService {
         total: 22000,
         firmaDigital: "neijfbvnoejnbeo",
         selloDigital: "ñeiubnroutbn"
+    	},{
+        proveedor: "ITESM2",
+        cliente: "Fomento Económico Mexicano S.A.B. de C.V. 2",
+        direccion_proveedor: "México",
+        direccion_cliente: "México",
+        rfc_Cliente: "Afkgneòari",
+        rfc_proveedor: "BVoejgno",
+        fecha: "12-03-18",
+        concepto: ["CocaCola","Sprite"],
+        cantidad: [200,100],
+        precio_unitario: [5,5],
+        importe: [1000,500],
+        impuesto: 320,
+        total: 22000,
+        firmaDigital: "neijfbvnoejnbeo",
+        selloDigital: "ñeiubnroutbn"
     	}
 
     	];

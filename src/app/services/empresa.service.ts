@@ -9,7 +9,7 @@ export class EmpresaService {
 
   getEmpresaInfo(){
     return[{
-      nombre:"FEMSA",
+      nombre:"FENSA",
       razon_social:"Fomento Económico Mexicano S.A.B. de C.V.",
       rfc:"FSE920910CC6",
       correo:"femsa@servicios.com",
