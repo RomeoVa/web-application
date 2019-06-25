@@ -12,4 +12,12 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  hidden = false;
+
+
+  Click($event:any){
+    this.hidden = ($event);
+    console.log("click", $event);
+  }
+
 }

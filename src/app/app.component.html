@@ -1,14 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div *ngIf="!isLoggedIn">
+<!--<div *ngIf="!isLoggedIn && !Registering">
   <body class="bg-gradient-primary">
     <div class="container">
-      <login (LoggedInEvent) = "leDiClick($event)"></login>
+      <login (LoggedInEvent) = "leDiClick($event)"
+      (RegisteringEvent) = "leDiClick2($event)"></login>
     </div>
   </body>
-</div>
+</div>-->
 
-<div id="wrapper" *ngIf="isLoggedIn">
+<!--<div *ngIf="!isLoggedIn && Registering">
+  <registro-usuario></registro-usuario>
+  <router-outlet (RegisteringEvent) = "leDiClick2($event)"></router-outlet>
+</div>-->
+
+<div id="wrapper">
   <nav-bar></nav-bar>
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">

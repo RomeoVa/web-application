@@ -7,12 +7,14 @@ import {CookieService} from 'angular2-cookie/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  isLoggedIn:any;
+  isLoggedIn:any = true;
+  Registering:any = true;
   constructor(private _cookieService:CookieService){
     this.isLoggedIn = _cookieService;
   }
 
   @Output() LoggedInEvent = new EventEmitter<boolean>();
+  @Output() RegisteringEvent = new EventEmitter<boolean>();
 
   ngOnInit() {
     this._cookieService.put("test", "test");
@@ -22,9 +24,14 @@ export class LoginComponent implements OnInit {
     return this._cookieService.get(key);
   }
 
-  enviar(){
+  Logged(){
     this.isLoggedIn = true;
     this.LoggedInEvent.emit(this.isLoggedIn);
+  }
+
+  Register(){
+    this.Registering = true;
+    this.RegisteringEvent.emit(this.Registering);
   }
 
 }

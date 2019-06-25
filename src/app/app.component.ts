@@ -9,13 +9,19 @@ import {LoginComponent as Login} from "src/app/components/login/login.component"
 
 export class AppComponent {
   title = 'web-application';
-  isLoggedIn:any = false;
+  isLoggedIn:any;
+  Registering:any = true;
 
 
   leDiClick($event:any){
     this.isLoggedIn = ($event);
     console.log("click", $event);
   }
-  logged = new Login(this.isLoggedIn);
+  leDiClick2($event:any){
+    this.Registering = ($event);
+    console.log("click", $event);
+  }
+
+  //logged = new Login(this.isLoggedIn);
 
 }

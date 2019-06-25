@@ -17,7 +17,7 @@
   </div>
 
   <!-- Nav Item - Reporte Facturas -->
-  <div class="nav-item">
+  <div class="nav-item" *ngIf="!hidden" (HiddenEvent)="Click($event)">
     <a class="nav-link" href="reporte-factura">
       <fa class="fas fa-fw" name="file-o"></fa>
       <span>Reporte de Facturas</span></a>
