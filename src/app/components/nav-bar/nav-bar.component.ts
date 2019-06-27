@@ -14,10 +14,6 @@ export class NavBarComponent implements OnInit {
 
   hidden = false;
 
-  collapse(){
-    document.getElementById("accordionSidebar").style.width = "200px";
-  }
-
   Click($event:any){
     this.hidden = ($event);
     console.log("click", $event);
