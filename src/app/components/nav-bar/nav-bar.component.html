@@ -1,4 +1,5 @@
-<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<div class="navbar-nav bg-gradient-primary sidebar sidebar-dark collapse navbar-collapse"
+[collapse]="isCollapsed" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="menu">
@@ -70,7 +71,8 @@
   <hr class="sidebar-divider d-none d-md-block">
 
   <div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0" id="sidebarToggle">
+    <button class="rounded-circle border-0 navbar-toggle collapsed"
+    (click)="isCollapsed = !isCollapsed" aria-expanded="true" id="sidebarToggle">
       <fa class="fas fa-fw grayToggle" name="arrow-left"></fa>
     </button>
   </div>

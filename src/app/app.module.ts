@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgxAsideModule } from 'ngx-aside';
 
 import { AppComponent } from './app.component';
@@ -98,6 +99,7 @@ const routes: Routes = [
     ChartsModule,
     TooltipModule.forRoot(),
     NgxAsideModule,
+    CollapseModule.forRoot(),
     BrowserAnimationsModule
   ],
   exports:[RouterModule],
