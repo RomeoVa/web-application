@@ -1,0 +1,11 @@
+{
+  "name": "mongo_conn",
+  "connector": "mongodb",
+  "url": "mongodb+srv://Admin:Admin1@cluster0-ggzgk.mongodb.net/FacturadoWeb?retryWrites=true&w=majority",
+  "host": "cluster0-ggzgk.mongodb.net",
+  "port": 27017,
+  "user": "Admin",
+  "password": "Admin1",
+  "database": "FacturadoWeb",
+  "useNewUrlParser": true
+}
