@@ -16,7 +16,7 @@ export class GenerarFacturaComponent implements OnInit {
 
   constructor(private router: Router) {
 
-    this.facturaModel = new Factura();
+    this.facturaModel = new Factura(1);
   }
 
   onSubmit() {

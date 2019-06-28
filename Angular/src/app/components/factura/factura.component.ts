@@ -15,7 +15,7 @@ export class FacturaComponent implements OnInit {
   num3:[];
 
   constructor() {
-    this.facturaModel = new Factura("Fomento Económico Mexicano S.A.B. de C.V.","Pedro","México","México","Afkgneòari","BVoejgno","12-03-18",this.arr,this.num,this.num2,this.num3,150,1650,"neijfbvnoejnbeo","ñeiubnroutbn");
+    this.facturaModel = new Factura(1,"Fomento Económico Mexicano S.A.B. de C.V.","Pedro","México","México","Afkgneòari","BVoejgno","12-03-18",this.arr,this.num,this.num2,this.num3,150,1650,"neijfbvnoejnbeo","ñeiubnroutbn","");
   }
 
   ngOnInit() {
