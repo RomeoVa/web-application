@@ -5,6 +5,8 @@ export class Cliente {
     public apellido: string,
     public rfc: string,
     public correo: string,
-    public contrasena: string
+    public contrasena: string,
+    public actaConstitutiva: string,
+    public estadoDeCuenta: string
   ) {  }
 }

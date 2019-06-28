@@ -5,7 +5,9 @@ export class Empresa {
     public razon_social: string,
     public rfc: string,
     public correo: string,
-    public contrasena: string
+    public contrasena: string,
+    public actaConstitutiva: string,
+    public estadoDeCuenta: string
   ) {  }
 
 }

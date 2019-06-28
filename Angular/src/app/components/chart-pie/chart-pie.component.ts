@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FacturasService} from '../../services/facturas.service';
 
 @Component({
   selector: 'chart-pie',
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class ChartPieComponent implements OnInit {
 
   public pieChartLabels = ['Exitosas','Pendientes','Canceladas'];
-  public pieChartData = ['424','120','50'];
+  public pieChartData=[];
   public pieChartType = 'pie';
 
-  constructor() { }
+  constructor(facturasService:FacturasService) {
+    this.pieChartData.push(facturasService.getFacturaStatus()[0].exitosas);
+    this.pieChartData.push(facturasService.getFacturaStatus()[0].pendientes);
+    this.pieChartData.push(facturasService.getFacturaStatus()[0].canceladas);
+
+  }
 
   ngOnInit() {
   }

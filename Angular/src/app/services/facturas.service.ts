@@ -7,6 +7,15 @@ export class FacturasService {
 
   constructor() { }
 
+    getFacturaStatus(){
+      return[{
+        exitosas: "424",
+        pendientes: "120",
+        canceladas: "50"
+
+      }];
+    }
+
     getFacturas()
     {
     	return[{
