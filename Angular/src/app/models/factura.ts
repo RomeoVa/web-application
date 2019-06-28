@@ -1,6 +1,7 @@
 export class Factura {
 
   constructor(
+    public id: number,
     public proveedor?: string,
     public cliente?: string,
     public direccion_proveedor?: string,
@@ -15,6 +16,7 @@ export class Factura {
     public impuesto?: number,
     public total?: number,
     public firmaDigital?: string,
-    public selloDigital?: string
+    public selloDigital?: string,
+    public estatus?: string
   ) {  }
 }
