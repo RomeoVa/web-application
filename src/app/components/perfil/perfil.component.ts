@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Empresa} from '../../models/empresa'
+import {Empresa} from '../../models/empresa';
 
 @Component({
   selector: 'perfil',
@@ -13,7 +13,7 @@ export class PerfilComponent implements OnInit {
 
   constructor() {
 
-    this.perfilModel = new Empresa("FEMSA","Fomento Económico Mexicano S.A.B. de C.V.","Aksjdfgo23","femsa@gmail.com","12345");
+    this.perfilModel = new Empresa("FEMSA","Fomento Económico Mexicano S.A.B. de C.V.","Aksjdfgo23","femsa@gmail.com","12345","","");
 
   }
 
