@@ -1,3 +1,9 @@
+<!-- Topbar Toggle -->
+<button id="sidebarToggleTop" class="btn btn-link  rounded-circle navbar-toggle collapsed"
+(click)="isCollapsed = !isCollapsed" aria-expanded="true">
+  <i class="fa fa-bars"></i>
+</button>
+
 <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark collapse navbar-collapse"
 [collapse]="isCollapsed" id="accordionSidebar">
 
@@ -70,12 +76,6 @@
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
 
-  <div class="text-center d-none d-md-inline">
-    <button class="rounded-circle border-0 navbar-toggle collapsed"
-    (click)="isCollapsed = !isCollapsed" aria-expanded="true" id="sidebarToggle">
-      <fa class="fas fa-fw grayToggle" name="arrow-left"></fa>
-    </button>
-  </div>
-
 </div>
+
 <!-- End of Sidebar -->
