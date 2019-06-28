@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { NgxAsideModule } from 'ngx-aside';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -25,6 +28,7 @@ import { FacturaComponent } from './components/factura/factura.component';
 import { GenerarFacturaComponent } from './components/generar-factura/generar-factura.component';
 import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
     {
@@ -92,7 +96,11 @@ const routes: Routes = [
     AngularFontAwesomeModule,
     BrowserModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    TooltipModule.forRoot(),
+    NgxAsideModule,
+    CollapseModule.forRoot(),
+    BrowserAnimationsModule
   ],
   exports:[RouterModule],
   providers: [CookieService],

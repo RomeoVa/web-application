@@ -7,11 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 })
 export class RegistroEmpresaComponent implements OnInit {
   hidden = false;
-  Registering = true;
 
   constructor() { }
   @Output() HiddenEvent = new EventEmitter<boolean>();
-  @Output() RegisteringEvent = new EventEmitter<boolean>();
 
   ngOnInit() {
   }
@@ -19,11 +17,6 @@ export class RegistroEmpresaComponent implements OnInit {
   Hide(){
     this.hidden = false;
     this.HiddenEvent.emit(this.hidden);
-  }
-
-  Register(){
-    this.Registering = false;
-    this.RegisteringEvent.emit(this.Registering);
   }
 
 }
