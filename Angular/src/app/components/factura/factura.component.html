@@ -1,80 +1,117 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  <div class="row factura-table">
-    <div class="col-lg-12 table-responsive">
-      <table>
-        <tr>
-          <td>
-            <div style="height:500px; overflow:auto;">
-              <table>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Factura</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table>
+              <tr>
+                <td>
+                  <div style="height:500px; overflow:auto;">
+                    <table>
+                      <tr>
+                        <td>Proveedor:</td>
+                        <td>{{facturaModel.proveedor}}</td>
+                      </tr>
+                      <tr>
+                        <td>Cliente:</td>
+                        <td>{{facturaModel.cliente}}</td>
+                      </tr>
+                      <tr>
+                        <td>Dirección de Proveedor:</td>
+                        <td>{{facturaModel.direccion_proveedor}}</td>
+                      </tr>
+                      <tr>
+                        <td>Dirección de Cliente:</td>
+                        <td>{{facturaModel.direccion_cliente}}</td>
+                      </tr>
+                      <tr>
+                        <td>RFC de Cliente:</td>
+                        <td>{{facturaModel.rfc_Cliente}}</td>
+                      </tr>
+                      <tr>
+                        <td>RFC de Proveedor:</td>
+                        <td>{{facturaModel.rfc_proveedor}}</td>
+                      </tr>
+                      <tr>
+                        <td>Fecha:</td>
+                        <td>{{facturaModel.fecha}}</td>
+                      </tr>
+                      <tr>
+                        <td>Impuesto:</td>
+                        <td>{{facturaModel.impuesto}}</td>
+                      </tr>
+                      <tr>
+                        <td>Total:</td>
+                        <td>{{facturaModel.total}}</td>
+                      </tr>
+                      <tr>
+                        <td>Firma Digital:</td>
+                        <td>{{facturaModel.firmaDigital}}</td>
+                      </tr>
+                      <tr>
+                        <td>Sello Digital:</td>
+                        <td>{{facturaModel.selloDigital}}</td>
+                      </tr>
+                    </table>
+
+                  </div>
+
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Conceptos</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm ">
+              <thead>
                 <tr>
-                  <td>Proveedor:</td>
-                  <td>{{facturaModel.proveedor}}</td>
+                  <th>Concepto</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                  <th>Importe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
                 </tr>
                 <tr>
-                  <td>Cliente:</td>
-                  <td>{{facturaModel.cliente}}</td>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
                 </tr>
                 <tr>
-                  <td>Dirección de Proveedor:</td>
-                  <td>{{facturaModel.direccion_proveedor}}</td>
-                </tr>
-                <tr>
-                  <td>Dirección de Cliente:</td>
-                  <td>{{facturaModel.direccion_cliente}}</td>
-                </tr>
-                <tr>
-                  <td>RFC de Cliente:</td>
-                  <td>{{facturaModel.rfc_Cliente}}</td>
-                </tr>
-                <tr>
-                  <td>RFC de Proveedor:</td>
-                  <td>{{facturaModel.rfc_proveedor}}</td>
-                </tr>
-                <tr>
-                  <td>Fecha:</td>
-                  <td>{{facturaModel.fecha}}</td>
-                </tr>
-                <tr>
-                  <td>Concepto:</td>
-                  <td>Brown</td>
-                </tr>
-                <tr>
-                  <td>Cantidad:</td>
-                  <td>Brown</td>
-                </tr>
-                <tr>
-                  <td>Precio unitario:</td>
-                  <td>Brown</td>
-                </tr>
-                <tr>
-                  <td>Importe:</td>
-                  <td>Brown</td>
-                </tr>
-                <tr>
-                  <td>Impuesto:</td>
-                  <td>{{facturaModel.impuesto}}</td>
-                </tr>
-                <tr>
-                  <td>Total:</td>
-                  <td>{{facturaModel.total}}</td>
-                </tr>
-                <tr>
-                  <td>Firma Digital:</td>
-                  <td>{{facturaModel.firmaDigital}}</td>
-                </tr>
-                <tr>
-                  <td>Sello Digital:</td>
-                  <td>{{facturaModel.selloDigital}}</td>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
                 </tr>
 
-              </table>
-
-            </div>
-
-          </td>
-        </tr>
-      </table>
+              </tbody>
+            </table>
+          </div>
+          <h5>Impuesto: {{facturaModel.impuesto}}</h5>
+          <h3>Total: {{facturaModel.total}}</h3>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-6">

@@ -54,7 +54,7 @@ const routes: Routes = [
         component: PerfilComponent
       },
       {
-        path: 'factura',
+        path: 'factura/:id',
         component: FacturaComponent
       },
       {
