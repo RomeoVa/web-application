@@ -13,19 +13,22 @@ export class ClientesService {
       {
         rfc:"VCD2p4f3g",
         nombre:"Juan",
-        apellido:"Pérez"
+        apellido:"Pérez",
+        direccion:"México"
 
       },
       {
         rfc:"FCDf35g4t",
         nombre:"Maria",
-        apellido:"Ortiz"
+        apellido:"Ortiz",
+        direccion:"México"
 
       },
       {
         rfc:"PLKncoejv3",
         nombre:"Jorge",
-        apellido:"Vela"
+        apellido:"Vela",
+        direccion:"México"
 
       }
 

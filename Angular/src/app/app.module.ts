@@ -6,6 +6,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxAsideModule } from 'ngx-aside';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -33,7 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
     {
-          path: 'menu',
+          path: '',
           component: MenuComponent
     }
     ,{
@@ -102,7 +103,8 @@ const routes: Routes = [
     NgxAsideModule,
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    NgbModule
   ],
   exports:[RouterModule],
   providers: [CookieService],
