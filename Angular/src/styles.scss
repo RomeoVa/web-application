@@ -2,21 +2,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "scss/sb-admin-2";
 
-.body-content {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    float:left;
+#wrapper{
+  margin:0px;
 }
 
-.left-menu {
-    float: left;
-    width: 50px;
-}
-
-.right-container {
-    width:calc(100% - 50px);
-    float:left;
+.sidebar{
+  height: 100%;
 }
 
 .grayToggle{
@@ -141,8 +132,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 $caso1: 580px;
-$caso2: 1024px;
-
+$caso2: 830px;
 
 @media (max-width: #{$caso1}) {
   .ghost{
@@ -153,7 +143,7 @@ $caso2: 1024px;
 
 @media (min-width: #{$caso1+1}) and (max-width: #{$caso2}) {
   .ghost{
-    visibility: visible;
+    display: none;
   }
 }
 
