@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxAsideModule } from 'ngx-aside';
 
 import { AppComponent } from './app.component';
@@ -100,7 +101,8 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     NgxAsideModule,
     CollapseModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot()
   ],
   exports:[RouterModule],
   providers: [CookieService],
