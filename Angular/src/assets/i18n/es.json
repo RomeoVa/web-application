@@ -56,5 +56,25 @@
      "stamp": "Sello Digital",
      "required": " es necesario",
      "create": "Crear"
+   },
+   "Register": {
+     "title": "Registro Usuarios",
+     "message": "Selecciona de que forma deseas registrarte.",
+     "business": "Negocio",
+     "client": "Cliente",
+     "name": "Nombre",
+     "e-name": "Nombre Negocio",
+     "business name": "Razón Social",
+     "lastname": "Apellido",
+     "mail": "Correo",
+     "act": "Acta Constitutiva",
+     "account": "Estado de Cuenta",
+     "file": "Archivo",
+     "required": " es necesario",
+     "create": "Crear",
+     "title2": "Perfil",
+     "password": "Contraseña",
+     "address": "Dirección",
+     "edit": "Editar"
    }
 }

@@ -11,6 +11,7 @@
           <div [hidden]="proveedor.valid || proveedor.pristine"
                class="alert alert-danger">
              {{'Generate.provider' | translate }} {{'Generate.required' | translate }}
+           </div>
         </div>
 
       <div class="form-group">
@@ -77,6 +78,69 @@
          </div>
       </div>
 
+      <div class="form-group">
+        <label for="fecha">{{'Generate.date' | translate }}</label>
+        <input type="date" class="form-control" id="fecha"
+                required
+                [(ngModel)]="facturaModel.fecha" name="fecha"
+                #fecha="ngModel">
+         <div [hidden]="fecha.valid || fecha.pristine"
+              class="alert alert-danger">
+              {{'Generate.date' | translate }} {{'Generate.required' | translate }}
+         </div>
+      </div>
 
+      <div class="form-group">
+        <label for="proveedor">{{'Generate.taxes' | translate }}</label>
+        <input type="text" class="form-control" id="proveedor"
+               required
+               [(ngModel)]="facturaModel.proveedor" name="proveedor"
+               #proveedor="ngModel">
+        <div [hidden]="proveedor.valid || proveedor.pristine"
+             class="alert alert-danger">
+           {{'Generate.taxes' | translate }} {{'Generate.required' | translate }}
+      </div>
+      </div>
 
+      <div class="form-group">
+        <label for="proveedor">{{'Generate.total' | translate }}</label>
+        <input type="text" class="form-control" id="proveedor"
+               required
+               [(ngModel)]="facturaModel.proveedor" name="proveedor"
+               #proveedor="ngModel">
+        <div [hidden]="proveedor.valid || proveedor.pristine"
+             class="alert alert-danger">
+           {{'Generate.total' | translate }} {{'Generate.required' | translate }}
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label for="proveedor">{{'Generate.signature' | translate }}</label>
+        <input type="text" class="form-control" id="proveedor"
+               required
+               [(ngModel)]="facturaModel.proveedor" name="proveedor"
+               #proveedor="ngModel">
+        <div [hidden]="proveedor.valid || proveedor.pristine"
+             class="alert alert-danger">
+           {{'Generate.signature' | translate }} {{'Generate.required' | translate }}
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label for="proveedor">{{'Generate.stamp' | translate }}</label>
+        <input type="text" class="form-control" id="proveedor"
+               required
+               [(ngModel)]="facturaModel.proveedor" name="proveedor"
+               #proveedor="ngModel">
+        <div [hidden]="proveedor.valid || proveedor.pristine"
+             class="alert alert-danger">
+           {{'Generate.stamp' | translate }} {{'Generate.required' | translate }}
+      </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary"
+              [disabled]="!facturaForm.form.valid">{{'Generate.create' | translate }}</button>
+
+    </form>
+  </div>
 </div>

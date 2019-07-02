@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'top-bar',
@@ -8,13 +7,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TopBarComponent implements OnInit {
 
-  public activeLang = 'es';
+  public activeLang:string;
   isCollapsed = false;
 
   @Output() Collapsing = new EventEmitter<boolean>();
+  @Output() TranslateEvent = new EventEmitter<string>();
 
-  constructor( private translate: TranslateService){
-    	this.translate.setDefaultLang(this.activeLang);
+  constructor(){
   	}
 
   ngOnInit() {
@@ -26,9 +25,9 @@ export class TopBarComponent implements OnInit {
     this.Collapsing.emit(this.isCollapsed);
   }
 
-  public cambiarLenguaje(lang) {
+  Lenguaje(lang) {
     this.activeLang = lang;
-    this.translate.use(lang);
+    this.TranslateEvent.emit(this.activeLang);
   }
 
 

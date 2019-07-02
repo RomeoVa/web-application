@@ -44,10 +44,10 @@
   "Generate":{
     "title": "Generate Invoice",
     "provider": "Provider",
-    "dir provider": "Provider Direction",
+    "dir provider": "Provider Address",
     "rfc provider": "Provider RFC",
     "client": "Client",
-    "dir client": "Client Direction",
+    "dir client": "Client Address",
     "rfc client": "Client RFC",
     "date": "Date",
     "taxes": "Taxes",
@@ -56,6 +56,26 @@
     "stamp": "Digital Stamp",
     "required": " is required",
     "create": "Create"
+  },
+  "Register": {
+    "title": "User Registry",
+    "message": "Select the type of Register.",
+    "business": "Business",
+    "client": "Client",
+    "name": "Name",
+    "e-name": "Enterprise Name",
+    "business name": "Business Name",
+    "lastname": "Lastname",
+    "mail": "Mail",
+    "act": "Constitutive Act",
+    "account": "Account Status",
+    "file": "File",
+    "required": " is required",
+    "create": "Create",
+    "title2": "Profile",
+    "password": "Password",
+    "address": "Address",
+    "edit": "Edit"
   }
 
 }

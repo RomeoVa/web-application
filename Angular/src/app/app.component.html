@@ -20,7 +20,8 @@
   <div id="content-wrapper" class="d-flex flex-column">
     <!-- Main Content -->
     <div id="content">
-      <top-bar (Collapsing)="receiveCollapse($event)"></top-bar>
+      <top-bar (Collapsing)="receiveCollapse($event)"
+      (TranslateEvent)="cambiarLenguaje($event)"></top-bar>
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
