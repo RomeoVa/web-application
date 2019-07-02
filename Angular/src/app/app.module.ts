@@ -31,6 +31,7 @@ import { GenerarFacturaComponent } from './components/generar-factura/generar-fa
 import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TablaConceptosComponent } from './components/tabla-conceptos/tabla-conceptos.component';
 
 const routes: Routes = [
     {
@@ -91,7 +92,8 @@ const routes: Routes = [
     FacturaComponent,
     GenerarFacturaComponent,
     ChartPieComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    TablaConceptosComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
