@@ -77,6 +77,10 @@ export class FacturasService {
     	];
     }
 
+    getFacturaById(id: string){
+
+    }
+
     getMisFacturas(){
       return[{
         id:"1",
@@ -155,4 +159,5 @@ export class FacturasService {
     	];
 
     }
+
 }

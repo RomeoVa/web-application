@@ -1,9 +1,10 @@
 export class Empresa {
 
   constructor(
+    public rfc: string,
     public nombre: string,
     public razon_social: string,
-    public rfc: string,
+    public direccion: string,
     public correo: string,
     public contrasena: string,
     public actaConstitutiva: string,

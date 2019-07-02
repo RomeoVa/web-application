@@ -6,6 +6,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxAsideModule } from 'ngx-aside';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -36,7 +37,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
     {
-          path: 'menu',
+          path: '',
           component: MenuComponent
     }
     ,{
@@ -58,7 +59,7 @@ const routes: Routes = [
         component: PerfilComponent
       },
       {
-        path: 'factura',
+        path: 'factura/:id',
         component: FacturaComponent
       },
       {
@@ -115,7 +116,8 @@ const routes: Routes = [
         },
         deps: [ HttpClient ]
       }
-    })
+    }),
+    NgbModule
   ],
   exports:[RouterModule],
   providers: [CookieService],

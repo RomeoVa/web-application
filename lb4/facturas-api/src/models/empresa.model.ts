@@ -4,6 +4,13 @@ import {Entity, model, property} from '@loopback/repository';
 export class Empresa extends Entity {
   @property({
     type: 'string',
+    id: true,
+    required: true,
+  })
+  rfc: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
   nombre: string;
@@ -16,10 +23,9 @@ export class Empresa extends Entity {
 
   @property({
     type: 'string',
-    id: true,
     required: true,
   })
-  rfc: string;
+  direccion: string;
 
   @property({
     type: 'string',
