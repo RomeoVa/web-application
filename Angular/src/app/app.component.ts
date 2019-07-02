@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent{
   title = 'web-application';
-  isCollapsed = false;
+
+  isCollapsed:boolean;
+
+  receiveCollapse($event:any){
+    this.isCollapsed = $event;
+    console.log(this.isCollapsed);
+  }
+
+
 }

@@ -1,44 +1,44 @@
 <div class="container">
-    <h1>Generar Factura</h1>
+    <h1>{{'Generate.title' | translate }}</h1>
     <form (ngSubmit)="onSubmit(); facturaForm.reset()" #facturaForm="ngForm">
       <div class="form-group">
-        <label for="proveedor">Proveedor</label>
+        <label for="proveedor">{{'Generate.provider' | translate }}</label>
         <input type="text" class="form-control" id="proveedor"
                required
                [(ngModel)]="facturaModel.proveedor" name="proveedor"
                #proveedor="ngModel">
         <div [hidden]="proveedor.valid || proveedor.pristine"
              class="alert alert-danger">
-           Proveedor is required
+           {{'Generate.provider' | translate }} {{'Generate.required' | translate }}
         </div>
       </div>
 
       <div class="form-group">
-        <label for="direccion_proveedor">Dirección Proveedor</label>
+        <label for="direccion_proveedor">{{'Generate.dir provider' | translate }}</label>
         <input type="text" class="form-control" id="direccion_proveedor"
                 required
                 [(ngModel)]="facturaModel.direccion_proveedor" name="direccion_proveedor"
                 #direccion_proveedor="ngModel">
          <div [hidden]="direccion_proveedor.valid || direccion_proveedor.pristine"
               class="alert alert-danger">
-              Dirección is required
+              {{'Generate.dir provider' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="rfc_proveedor">Rfc proveedor</label>
+        <label for="rfc_proveedor">{{'Generate.rfc provider' | translate }}</label>
         <input type="text" class="form-control" id="rfc_proveedor"
                 required
                 [(ngModel)]="facturaModel.rfc_proveedor" name="rfc_proveedor"
                 #rfc_proveedor="ngModel">
          <div [hidden]="rfc_proveedor.valid || rfc_proveedor.pristine"
               class="alert alert-danger">
-              RFC proveedor is required
+              {{'Generate.rfc provider' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="cliente">Cliente</label>
+        <label for="cliente">{{'Generate.client' | translate }}</label>
         <select class="form-control" id="cliente"
            required
            [(ngModel)]="facturaModel.cliente" name="cliente"
@@ -49,96 +49,96 @@
         </select>
         <div [hidden]="cliente.valid || cliente.pristine"
              class="alert alert-danger">
-             Cliente is required
+            {{'Generate.client' | translate }} {{'Generate.required' | translate }}
         </div>
       </div>
 
       <div class="form-group">
-        <label for="direccion_cliente">Dirección Cliente</label>
+        <label for="direccion_cliente">{{'Generate.dir client' | translate }}</label>
         <input type="text" class="form-control" id="direccion_cliente"
                 required
                 [(ngModel)]="facturaModel.direccion_cliente" name="direccion_cliente"
                 #direccion_cliente="ngModel">
          <div [hidden]="direccion_cliente.valid || direccion_cliente.pristine"
               class="alert alert-danger">
-              Dirección is required
+              {{'Generate.dir client' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="rfc_Cliente">Rfc cliente</label>
+        <label for="rfc_Cliente">{{'Generate.rfc client' | translate }}</label>
         <input type="text" class="form-control" id="rfc_Cliente"
                 required
                 [(ngModel)]="facturaModel.rfc_Cliente" name="rfc_Cliente"
                 #rfc_Cliente="ngModel">
          <div [hidden]="rfc_Cliente.valid || rfc_Cliente.pristine"
               class="alert alert-danger">
-              RFC cliente is required
+              {{'Generate.rfc client' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="fecha">Fecha</label>
+        <label for="fecha">{{'Generate.date' | translate }}</label>
         <input type="date" class="form-control" id="fecha"
                 required
                 [(ngModel)]="facturaModel.fecha" name="fecha"
                 #fecha="ngModel">
          <div [hidden]="fecha.valid || fecha.pristine"
               class="alert alert-danger">
-              Fecha cliente is required
+              {{'Generate.date' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="impuesto">Impuesto</label>
+        <label for="impuesto">{{'Generate.taxes' | translate }}</label>
         <input type="text" class="form-control" id="impuesto"
                 required
                 [(ngModel)]="facturaModel.impuesto" name="impuesto"
                 #impuesto="ngModel">
          <div [hidden]="impuesto.valid || impuesto.pristine"
               class="alert alert-danger">
-              Impuesto is required
+              {{'Generate.taxes' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="total">Total</label>
+        <label for="total">{{'Generate.total' | translate }}</label>
         <input type="text" class="form-control" id="total"
                 required
                 [(ngModel)]="facturaModel.total" name="total"
                 #total="ngModel">
          <div [hidden]="total.valid || total.pristine"
               class="alert alert-danger">
-              Total is required
+              {{'Generate.total' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="firmaDigital">Firma Digital</label>
+        <label for="firmaDigital">{{'Generate.signature' | translate }}</label>
         <input type="text" class="form-control" id="firmaDigital"
                 required
                 [(ngModel)]="facturaModel.firmaDigital" name="firmaDigital"
                 #firmaDigital="ngModel">
          <div [hidden]="firmaDigital.valid || firmaDigital.pristine"
               class="alert alert-danger">
-              Firma Digital is required
+              {{'Generate.signature' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="selloDigital">Sello Digital</label>
+        <label for="selloDigital">{{'Generate.stamp' | translate }}</label>
         <input type="text" class="form-control" id="selloDigital"
                 required
                 [(ngModel)]="facturaModel.selloDigital" name="selloDigital"
                 #selloDigital="ngModel">
          <div [hidden]="selloDigital.valid || selloDigital.pristine"
               class="alert alert-danger">
-              Sello Digital is required
+              {{'Generate.stamp' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <button type="submit" class="btn btn-primary"
-              [disabled]="!facturaForm.form.valid" (click)="formulario.reset();">Crear</button>
+              [disabled]="!facturaForm.form.valid" (click)="formulario.reset();">{{'Generate.create' | translate }}</button>
 
     </form>
 </div>

@@ -15,12 +15,12 @@
 </div>-->
 
 <div id="wrapper">
-  <nav-bar></nav-bar>
+  <nav-bar [collapseMessage]="isCollapsed"></nav-bar>
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
     <!-- Main Content -->
     <div id="content">
-      <top-bar></top-bar>
+      <top-bar (Collapsing)="receiveCollapse($event)"></top-bar>
 
       <!-- Begin Page Content -->
       <div class="container-fluid">

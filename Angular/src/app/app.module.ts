@@ -30,6 +30,9 @@ import { GenerarFacturaComponent } from './components/generar-factura/generar-fa
 import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
     {
@@ -102,7 +105,17 @@ const routes: Routes = [
     NgxAsideModule,
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [ HttpClient ]
+      }
+    })
   ],
   exports:[RouterModule],
   providers: [CookieService],

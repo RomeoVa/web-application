@@ -1,12 +1,12 @@
 <div class="navbar-nav bg-gradient-primary sidebar sidebar-dark collapse navbar-collapse"
-[collapse]="isCollapsed" id="accordionSidebar">
+[collapse]="collapseMessage" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="menu">
     <div class="sidebar-brand-icon rotate-n-15">
       <fa class="fas fa-fw" name="folder"></fa>
     </div>
-    <div class="sidebar-brand-text mx-3">Facturado</div>
+    <div class="sidebar-brand-text mx-3">{{'NavBar.title' | translate }}</div>
   </a>
 
   <!-- Divider -->
@@ -14,14 +14,14 @@
 
   <!--Heading-->
   <div class="sidebar-heading">
-    Facturado
+    {{'NavBar.div-title 1' | translate }}
   </div>
 
   <!-- Nav Item - Reporte Facturas -->
   <div class="nav-item" *ngIf="!hidden" (HiddenEvent)="Click($event)">
     <a class="nav-link" href="reporte-factura">
       <fa class="fas fa-fw" name="file-o"></fa>
-      <span>Reporte de Facturas</span></a>
+      <span>{{'NavBar.sub-title 1' | translate }}</span></a>
   </div>
 
   <!-- Divider -->
@@ -29,14 +29,14 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Clientes
+    {{'NavBar.div-title 2' | translate }}
   </div>
 
   <!-- Nav Item - Reporte Clientes -->
   <div class="nav-item">
     <a class="nav-link" href="reporte-clientes">
       <fa class="fas fa-fw" name="user"></fa>
-      <span>Reporte Clientes</span></a>
+      <span>{{'NavBar.sub-title 2' | translate }}</span></a>
   </div>
 
   <!-- Divider -->
@@ -44,13 +44,13 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Mis Facturas
+    {{'NavBar.div-title 3' | translate }}
   </div>
   <!-- Nav Item - Facturas Recibidas-->
   <div class="nav-item">
     <a class="nav-link" href="misfacturas">
       <fa class="fas fa-fw" name="files-o"></fa>
-      <span>Facturas Recibidas</span></a>
+      <span>{{'NavBar.sub-title 3' | translate }}</span></a>
   </div>
 
   <!-- Divider -->
@@ -58,13 +58,13 @@
 
   <!-- Heading -->
   <div class="sidebar-heading">
-    Generar
+    {{'NavBar.div-title 4' | translate }}
   </div>
   <!-- Nav Item - Facturas Recibidas-->
   <div class="nav-item">
     <a class="nav-link" href="generar-factura">
       <fa class="fas fa-fw" name="pencil"></fa>
-      <span>Generar Factura</span></a>
+      <span>{{'NavBar.sub-title 4' | translate }}</span></a>
   </div>
 
   <!-- Divider -->

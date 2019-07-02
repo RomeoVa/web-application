@@ -1,6 +1,6 @@
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Reporte de Facturas</h1>
+    <h1 class="h3 mb-0 text-gray-800">{{'Reportes.title' | translate }}</h1>
   </div>
 
 
@@ -13,7 +13,7 @@
       <!-- Area Chart -->
       <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Gráfico</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{'Reportes.chart' | translate }}</h6>
                   </div>
                   <div class="card-body">
                       <chart-pie></chart-pie>
@@ -25,7 +25,7 @@
 
             <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 pt-3 my-md-0 mw-100 navbar-search">
               <div class="input-group">
-                <input type="text" class="form-control bg-white border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+                <input type="text" class="form-control bg-white border-0 small" placeholder="{{'Reportes.search' | translate }}" aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="button">
                     <fa class="fas fa-sm" name="search"></fa>
@@ -48,11 +48,11 @@
             <table id="exitosa-table">
               <thead>
                 <tr>
-                  <th>Razón Social</th>
-                  <th>Fecha</th>
-                  <th>Monto</th>
-                  <th>Estatus</th>
-                  <th class="Acciones">Acciones</th>
+                  <th>{{'Reportes.business name' | translate }}</th>
+                  <th>{{'Reportes.date' | translate }}</th>
+                  <th>{{'Reportes.amount' | translate }}</th>
+                  <th>{{'Reportes.status' | translate }}</th>
+                  <th class="Acciones">{{'Reportes.accion' | translate }}</th>
                 </tr>
               </thead>
 

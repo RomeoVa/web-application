@@ -2,14 +2,14 @@
 
   <!-- Topbar Toggle -->
   <button id="sidebarToggleTop" class="btn btn-link  rounded-circle navbar-toggle collapsed"
-  (click)="isCollapsed = !isCollapsed" aria-expanded="true">
+  (click)="Collapse();" aria-expanded="true">
     <i class="fa fa-bars"></i>
   </button>
 
   <!-- Topbar User -->
-  <div class="nav-item dropdown no-arrow col-md-1 col-sm-6 col-lg-4">
+  <div class="nav-item dropdown no-arrow col-md-1 col-sm-6 col-lg-4 ghost">
     <a class="nav-link dropdown-toggle" href="menu" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <h1 class="h3 text-gray-800 sidebar-brand-text mx-3 ghost">Nombre Usuario</h1>
+      <h1 class="h3 text-gray-800 sidebar-brand-text mx-3">Nombre Usuario</h1>
     </a>
   </div>
 
@@ -20,18 +20,41 @@
     <div class="topbar-divider d-none d-md-block"></div>
 
     <li class="nav-item dropdown no-arrow" dropdown>
-      <a dropdownToggle class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a dropdownToggle class="nav-link dropdown-toggle"  id="userDropdown"
+      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <fa class="fas fa-fw" name="book"></fa>
-        <span>Idioma</span>
+        <span>{{'TopBar.translator' | translate }}</span>
+      </a>
+      <!-- Dropdown - User Information -->
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" [ngClass]="{'disabled': activeLang == 'es'}" (click)="cambiarLenguaje('es')">
+          <span>{{'TopBar.es' | translate }}</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [ngClass]="{'disabled': activeLang == 'en'}" (click)="cambiarLenguaje('en')">
+          <span>{{'TopBar.en' | translate }}</span>
+        </a>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown no-arrow" dropdown>
+      <a dropdownToggle class="nav-link dropdown-toggle"  id="userDropdown"
+      role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <fa class="fas fa-fw" name="money"></fa>
+        <span>{{'TopBar.currency' | translate }}</span>
       </a>
       <!-- Dropdown - User Information -->
       <div *dropdownMenu class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
         <a class="dropdown-item" href="#">
-          <span>Español</span>
+          <span>{{'TopBar.peso' | translate }}</span>
         </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">
-          <span>Ingles</span>
+          <span>{{'TopBar.dolar' | translate }}</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">
+          <span>{{'TopBar.euro' | translate }}</span>
         </a>
       </div>
     </li>
@@ -41,13 +64,13 @@
     <div class="nav-item">
       <a class="nav-link" href="perfil">
         <fa class="fas fa-fw" name="user"></fa>
-        <span>Perfil</span></a>
+        <span>{{'TopBar.profile' | translate }}</span></a>
     </div>
 
     <div class="nav-item">
       <a class="nav-link" href="login">
         <fa class="fas fa-fw" name="sign-out"></fa>
-        <span>Salir</span></a>
+        <span>{{'TopBar.logout' | translate }}</span></a>
     </div>
 
   </div>

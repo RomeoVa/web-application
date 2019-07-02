@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'nav-bar',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+    @Input() collapseMessage: boolean;
+    isCollapsed: boolean;
 
   constructor() { }
 
   ngOnInit() {
+    this.isCollapsed = this.collapseMessage;
   }
 
   hidden = false;

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'top-bar',
@@ -7,18 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  public activeLang = 'es';
+  isCollapsed = false;
+
+  @Output() Collapsing = new EventEmitter<boolean>();
+
+  constructor( private translate: TranslateService){
+    	this.translate.setDefaultLang(this.activeLang);
+  	}
 
   ngOnInit() {
+
   }
 
-  collapse(){
-    if (document.getElementById("accordionSidebar").style.width = "250px"){
-      document.getElementById("accordionSidebar").style.width = "0px";
-    }else {
-      document.getElementById("accordionSidebar").style.width = "250px";
-    }
+  Collapse(){
+    this.isCollapsed = !this.isCollapsed;
+    this.Collapsing.emit(this.isCollapsed);
+  }
 
+  public cambiarLenguaje(lang) {
+    this.activeLang = lang;
+    this.translate.use(lang);
   }
 
 
