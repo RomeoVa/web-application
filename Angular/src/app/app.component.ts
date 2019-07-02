@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent{
   title = 'web-application';
-  isCollapsed = false;
+  public activeLang = 'es';
+  isCollapsed:boolean;
+
+  constructor( private translate: TranslateService){
+    	this.translate.setDefaultLang(this.activeLang);
+  	}
+
+  receiveCollapse($event:any){
+    this.isCollapsed = $event;
+    console.log(this.isCollapsed);
+  }
+
+  public cambiarLenguaje($event:any) {
+    this.activeLang = $event;
+    this.translate.use($event);
+  }
+
+
 }

@@ -31,6 +31,9 @@ import { GenerarFacturaComponent } from './components/generar-factura/generar-fa
 import { ChartPieComponent } from './components/chart-pie/chart-pie.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TablaConceptosComponent } from './components/tabla-conceptos/tabla-conceptos.component';
 
 const routes: Routes = [
@@ -106,6 +109,16 @@ const routes: Routes = [
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader(http);
+        },
+        deps: [ HttpClient ]
+      }
+    }),
     NgbModule
   ],
   exports:[RouterModule],

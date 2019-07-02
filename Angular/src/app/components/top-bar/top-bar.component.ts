@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'top-bar',
@@ -7,18 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  public activeLang:string;
+  isCollapsed = false;
+
+  @Output() Collapsing = new EventEmitter<boolean>();
+  @Output() TranslateEvent = new EventEmitter<string>();
+
+  constructor(){
+  	}
 
   ngOnInit() {
+
   }
 
-  collapse(){
-    if (document.getElementById("accordionSidebar").style.width = "250px"){
-      document.getElementById("accordionSidebar").style.width = "0px";
-    }else {
-      document.getElementById("accordionSidebar").style.width = "250px";
-    }
+  Collapse(){
+    this.isCollapsed = !this.isCollapsed;
+    this.Collapsing.emit(this.isCollapsed);
+  }
 
+  Lenguaje(lang) {
+    this.activeLang = lang;
+    this.TranslateEvent.emit(this.activeLang);
   }
 
 
