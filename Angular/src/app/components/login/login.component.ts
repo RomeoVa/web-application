@@ -7,9 +7,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  public activeLang:string;
+
+  @Output() TranslateEvent = new EventEmitter<string>();
+
+  constructor(){
+    }
+
   ngOnInit() {
 
   }
 
+  Lenguaje(lang) {
+    this.activeLang = lang;
+    this.TranslateEvent.emit(this.activeLang);
+  }
 
 }

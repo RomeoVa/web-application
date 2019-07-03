@@ -76,6 +76,23 @@
     "password": "Password",
     "address": "Address",
     "edit": "Edit"
+  },
+  "Concept":{
+    "title": "Concept",
+    "name": "Name",
+    "quantity": "Quantity",
+    "price": "Unitary Price",
+    "required": " is required",
+    "add": "Add",
+    "total": "Total",
+    "amount": "Amount"
+  },
+  "LoginM":{
+    "remember": "Remember Me!",
+    "enter": "Login",
+    "register": "Create Your Account!",
+    "password": "Password",
+    "mail": "Enter Email Address..."
   }
 
 }

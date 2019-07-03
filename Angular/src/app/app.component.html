@@ -1,10 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<!--<div *ngIf="!isLoggedIn && !Registering">
+<!--<div>
   <body class="bg-gradient-primary">
     <div class="container">
       <login (LoggedInEvent) = "leDiClick($event)"
-      (RegisteringEvent) = "leDiClick2($event)"></login>
+      (RegisteringEvent) = "leDiClick2($event)"
+      (TranslateEvent)="cambiarLenguaje($event)"></login>
     </div>
   </body>
 </div>-->
@@ -16,24 +17,19 @@
 
 <div id="wrapper">
   <nav-bar [collapseMessage]="isCollapsed"></nav-bar>
-  <!-- Content Wrapper -->
+
   <div id="content-wrapper" class="d-flex flex-column">
-    <!-- Main Content -->
     <div id="content">
       <top-bar (Collapsing)="receiveCollapse($event)"
       (TranslateEvent)="cambiarLenguaje($event)"></top-bar>
 
-      <!-- Begin Page Content -->
       <div class="container-fluid">
         <router-outlet></router-outlet>
       </div>
-      <!-- /.container-fluid -->
 
     </div>
-    <!-- End of Main Content -->
+
     <app-footer></app-footer>
 
   </div>
-  <!-- End of Content Wrapper -->
 </div>
-<!-- End of Page Wrapper -->
