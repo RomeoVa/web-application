@@ -132,7 +132,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 $caso1: 580px;
-$caso2: 930px;
+$caso2: 970px;
 
 @media (max-width: #{$caso1}) {
   .ghost{
