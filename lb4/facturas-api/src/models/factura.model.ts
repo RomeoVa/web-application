@@ -52,6 +52,13 @@ export class Factura extends Entity {
   fecha: string;
 
   @property({
+    type: 'array',
+    itemType: 'object',
+    required: true,
+  })
+  concepto: object[];
+
+  @property({
     type: 'number',
     required: true,
   })
@@ -80,13 +87,6 @@ export class Factura extends Entity {
     required: true,
   })
   estatus: string;
-
-  @property({
-    type: 'array',
-    itemType: 'object',
-    required: true,
-  })
-  concepto: object[];
 
 
   constructor(data?: Partial<Factura>) {

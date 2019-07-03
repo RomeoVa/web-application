@@ -58,24 +58,24 @@
       </div>
 
       <div class="form-group">
-        <label for="direccion_proveedor">{{'Generate.dir client' | translate }}</label>
+        <label for="direccion_cliente">{{'Generate.dir client' | translate }}</label>
         <input type="text" class="form-control" id="direccion_proveedor"
                 required
-                [(ngModel)]="facturaModel.direccion_proveedor" name="direccion_proveedor"
-                #direccion_proveedor="ngModel">
-         <div [hidden]="direccion_proveedor.valid || direccion_proveedor.pristine"
+                [(ngModel)]="facturaModel.direccion_cliente" name="direccion_cliente"
+                #direccion_cliente="ngModel">
+         <div [hidden]="direccion_cliente.valid || direccion_cliente.pristine"
               class="alert alert-danger">
               {{'Generate.dir client' | translate }} {{'Generate.required' | translate }}
          </div>
       </div>
 
       <div class="form-group">
-        <label for="rfc_proveedor">{{'Generate.rfc client' | translate }}</label>
+        <label for="rfc_cliente">{{'Generate.rfc client' | translate }}</label>
         <input type="text" class="form-control" id="rfc_proveedor"
                 required
-                [(ngModel)]="facturaModel.rfc_proveedor" name="rfc_proveedor"
-                #rfc_proveedor="ngModel">
-         <div [hidden]="rfc_proveedor.valid || rfc_proveedor.pristine"
+                [(ngModel)]="facturaModel.rfc_cliente" name="rfc_cliente"
+                #rfc_cliente="ngModel">
+         <div [hidden]="rfc_cliente.valid || rfc_cliente.pristine"
               class="alert alert-danger">
               {{'Generate.rfc client' | translate }} {{'Generate.required' | translate }}
          </div>
@@ -94,12 +94,12 @@
       </div>
 
       <div class="form-group">
-        <label for="proveedor">{{'Generate.taxes' | translate }}</label>
-        <input type="text" class="form-control" id="proveedor"
+        <label for="impuesto">{{'Generate.taxes' | translate }}</label>
+        <input type="text" class="form-control" id="impuesto"
                required
-               [(ngModel)]="facturaModel.proveedor" name="proveedor"
-               #proveedor="ngModel">
-        <div [hidden]="proveedor.valid || proveedor.pristine"
+               [(ngModel)]="facturaModel.impuesto" name="impuesto"
+               #impuesto="ngModel">
+        <div [hidden]="impuesto.valid || impuesto.pristine"
              class="alert alert-danger">
            {{'Generate.taxes' | translate }} {{'Generate.required' | translate }}
       </div>
