@@ -3,11 +3,10 @@ import {Entity, model, property} from '@loopback/repository';
 @model({settings: {}})
 export class Factura extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
-    required: true,
   })
-  id: number;
+  _id: string;
 
   @property({
     type: 'string',
@@ -46,7 +45,7 @@ export class Factura extends Entity {
   rfc_proveedor: string;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
   })
   fecha: string;

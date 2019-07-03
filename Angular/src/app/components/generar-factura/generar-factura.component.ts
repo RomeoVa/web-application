@@ -21,7 +21,7 @@ export class GenerarFacturaComponent implements OnInit {
 
   constructor(private router: Router) {
 
-    this.facturaModel = new Factura(1);
+    this.facturaModel = new Factura();
     this.conceptoModel = new Concepto();
     this.conceptos = new Array();
     this.index = 0;
@@ -38,7 +38,7 @@ export class GenerarFacturaComponent implements OnInit {
 
 
     console.log(this.facturaModel);
-    this.facturaModel = new Factura(1);
+    this.facturaModel = new Factura();
     this.conceptos = [];
   }
 
