@@ -48,40 +48,40 @@ const routes: Routes = [
     ,{
         path: 'menu',
         component: MenuComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
     }
     ,{
         path: 'reporte-factura',
         component: ReporteFacturaComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
     }
     ,{
         path: 'reporte-clientes',
         component: ReporteClientesComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
     }
     ,{
         path: 'misfacturas',
         component: MisfacturasComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
     },{
         path: 'app-footer',
         component: FooterComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
     },{
         path: 'perfil',
         component: PerfilComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
       },
       {
         path: 'factura/:id',
         component: FacturaComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
       },
       {
         path: 'generar-factura',
         component: GenerarFacturaComponent,
-        canActivate: [AuthGuard]
+        //canActivate: [AuthGuard]
       },{
           path: 'registro-empresa',
           component: RegistroEmpresaComponent,

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import {FacturaComponent} from '../factura/factura.component'
 
 @Component({
   selector: 'top-bar',
@@ -13,8 +14,8 @@ export class TopBarComponent implements OnInit {
   @Output() Collapsing = new EventEmitter<boolean>();
   @Output() TranslateEvent = new EventEmitter<string>();
 
-  constructor(){
-  	}
+
+  constructor(){}
 
   ngOnInit() {
 

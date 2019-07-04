@@ -74,6 +74,30 @@
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">Conceptos</h6>
         </div>
+        <ul>
+          <li class="nav-item dropdown no-arrow" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle"  id="userDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <fa class="fas fa-fw" name="money"></fa>
+              <span>{{'TopBar.currency' | translate }}</span>
+            </a>
+            <!-- Dropdown - User Information -->
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <a class="dropdown-item" (click)="moneda('MXN')">
+                <span>{{'TopBar.peso' | translate }}</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="moneda('USD');">
+                <span>{{'TopBar.dolar' | translate }}</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="moneda('EUR');">
+                <span>{{'TopBar.euro' | translate }}</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-sm fixed_header">
@@ -90,8 +114,8 @@
               </tbody>
             </table>
           </div>
-          <h5>Impuesto: {{facturaModel.impuesto}}</h5>
-          <h3>Total: {{facturaModel.total}}</h3>
+          <h5>{{'Generate.taxes' | translate }}: {{facturaModel.impuesto}}</h5>
+          <h3>{{'Concept.total' | translate }}: {{facturaModel.total}}</h3>
         </div>
       </div>
     </div>

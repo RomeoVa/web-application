@@ -14,6 +14,7 @@ import { AuthGuard } from './guards/auth.guard';
 export class AppComponent{
   title = 'web-application';
   public activeLang = 'es';
+  public changeCurrency;
   isCollapsed:boolean;
   currentUser: Empresa;
 
@@ -31,6 +32,11 @@ export class AppComponent{
   public cambiarLenguaje($event:any) {
     this.activeLang = $event;
     this.translate.use($event);
+  }
+
+  public cambiarCurrency($event:any) {
+    this.changeCurrency = $event;
+    console.log(this.changeCurrency);
   }
 
 

@@ -21,7 +21,7 @@
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <top-bar (Collapsing)="receiveCollapse($event)"
-      (TranslateEvent)="cambiarLenguaje($event)"></top-bar>
+      (TranslateEvent)="cambiarLenguaje($event)" (CurrencyEvent)="cambiarCurrency($event)"></top-bar>
 
       <div class="container-fluid">
         <router-outlet></router-outlet>
