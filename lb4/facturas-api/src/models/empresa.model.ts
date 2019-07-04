@@ -52,11 +52,16 @@ export class Empresa extends Entity {
   estadoDeCuenta: string;
 
   @property({
-    type: 'array',
-    itemType: 'string',
+    type: 'string',
     required: true,
   })
-  cliente: string[];
+  role: string;
+
+  type: 'array',
+  itemType: 'string',
+  required: true,
+})
+cliente: string[];
 
 
   constructor(data?: Partial<Empresa>) {

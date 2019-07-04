@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FacturasService}  from '../../services/facturas.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'reporte-factura',

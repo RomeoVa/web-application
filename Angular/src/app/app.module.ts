@@ -33,45 +33,67 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TablaConceptosComponent } from './components/tabla-conceptos/tabla-conceptos.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { AuthGuard } from './guards/auth.guard';
+import { ErrorInterceptor   } from './helpers/error.interceptor';
+
 
 const routes: Routes = [
     {
-          path: '',
-          component: MenuComponent
+          path: 'login',
+          component: LoginComponent
+    }
+    ,{
+        path: 'menu',
+        component: MenuComponent,
+        canActivate: [AuthGuard]
     }
     ,{
         path: 'reporte-factura',
-        component: ReporteFacturaComponent
+        component: ReporteFacturaComponent,
+        canActivate: [AuthGuard]
     }
     ,{
         path: 'reporte-clientes',
-        component: ReporteClientesComponent
+        component: ReporteClientesComponent,
+        canActivate: [AuthGuard]
     }
     ,{
         path: 'misfacturas',
-        component: MisfacturasComponent
+        component: MisfacturasComponent,
+        canActivate: [AuthGuard]
     },{
         path: 'app-footer',
-        component: FooterComponent
+        component: FooterComponent,
+        canActivate: [AuthGuard]
     },{
         path: 'perfil',
-        component: PerfilComponent
+        component: PerfilComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'factura/:id',
-        component: FacturaComponent
+        component: FacturaComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'generar-factura',
-        component: GenerarFacturaComponent
+        component: GenerarFacturaComponent,
+        canActivate: [AuthGuard]
       },{
           path: 'registro-empresa',
-          component: RegistroEmpresaComponent
+          component: RegistroEmpresaComponent,
+          canActivate: [AuthGuard]
       },{
           path: 'registro-clientes',
-          component: RegistroClientesComponent
+          component: RegistroClientesComponent,
+          canActivate: [AuthGuard]
+      },{
+          path: 'registro-usuario',
+          component: RegistroUsuarioComponent,
+          canActivate: [AuthGuard]
       }
 ];
 
@@ -122,7 +144,10 @@ const routes: Routes = [
     NgbModule
   ],
   exports:[RouterModule],
-  providers: [CookieService],
+  providers: [CookieService,
+                { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+                { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,9 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Routes, RouterModule } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
+import { Empresa } from './models/empresa';
+import { AuthGuard } from './guards/auth.guard';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +15,11 @@ export class AppComponent{
   title = 'web-application';
   public activeLang = 'es';
   isCollapsed:boolean;
+  currentUser: Empresa;
 
-  constructor( private translate: TranslateService){
+  constructor( private translate: TranslateService,
+  private authenticationService: AuthenticationService){
+      this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     	this.translate.setDefaultLang(this.activeLang);
   	}
 

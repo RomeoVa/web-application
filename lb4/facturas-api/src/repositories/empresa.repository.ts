@@ -3,6 +3,11 @@ import {Empresa, EmpresaRelations} from '../models';
 import {MongoConnDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
+export type CredentialsEmpresa = {
+  correo: string;
+  contrasena: string;
+}
+
 export class EmpresaRepository extends DefaultCrudRepository<
   Empresa,
   typeof Empresa.prototype.rfc,

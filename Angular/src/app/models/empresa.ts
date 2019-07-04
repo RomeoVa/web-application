@@ -9,6 +9,7 @@ export class Empresa {
     public contrasena: string,
     public actaConstitutiva: string,
     public estadoDeCuenta: string,
+    public token?: string,
     public cliente?: Array<string>
   ) {  }
 
