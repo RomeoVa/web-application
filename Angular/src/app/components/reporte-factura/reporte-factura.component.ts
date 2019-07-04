@@ -10,9 +10,17 @@ import {FacturasService}  from '../../services/facturas.service';
 export class ReporteFacturaComponent implements OnInit {
 
   facturas;
+  facturas2;
 
   constructor(facturasService: FacturasService) {
-    this.facturas= facturasService.getFacturas();
+    facturasService.getAllFacturas().subscribe((data: {}) => {
+      console.log(data);
+      this.facturas = data;
+    });
+    /*facturasService.getMyFacturas("Fbeio4bv").subscribe((data: {}) => {
+      console.log(data);
+      this.facturas2 = data;
+    });*/
   }
 
   ngOnInit() {

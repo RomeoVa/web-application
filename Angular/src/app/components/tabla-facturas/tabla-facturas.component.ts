@@ -9,7 +9,8 @@ export class TablaFacturasComponent implements OnInit {
 
   @Input() factura;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

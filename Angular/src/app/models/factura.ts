@@ -9,7 +9,7 @@ export class Factura {
     public rfc_cliente?: string,
     public rfc_proveedor?: string,
     public fecha?: string,
-    public conceptos?: Array<Object>,
+    public concepto?: Array<Object>,
     public impuesto?: number,
     public total?: number,
     public firmaDigital?: string,

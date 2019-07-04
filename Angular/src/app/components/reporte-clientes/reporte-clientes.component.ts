@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ClientesService}  from '../../services/clientes.service';
+import {Cliente} from '../../models/cliente';
 
 @Component({
   selector: 'reporte-clientes',
@@ -9,10 +10,14 @@ import {ClientesService}  from '../../services/clientes.service';
 })
 export class ReporteClientesComponent implements OnInit {
 
-  clientes;
+  clientes: Array<string>;
 
   constructor(clientesService: ClientesService) {
-    this.clientes= clientesService.getClientesByEmpresa();
+
+    //this.clientes = clientesService.getClientesByEmpresa();
+    this.clientes = new Array();
+    this.clientes = ["sdsdsds","defefefef"];
+    console.log(this.clientes);
   }
 
   ngOnInit() {

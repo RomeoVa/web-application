@@ -9,3 +9,22 @@ table {
 .card-body{
   text-align: right;
 }
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 100px;
+}
+
+.fixed_header thead tr {
+   display: block;
+   background: #51596a;
+   color: #ffffff
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+}

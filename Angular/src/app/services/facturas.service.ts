@@ -28,6 +28,38 @@ export class FacturasService {
 	    map(this.extractData));
   }
 
+  getFacturaById(id): Observable<any>{
+    return this.http.get(this.endpoint + '/' + id).pipe(
+    map(this.extractData));
+  }
+
+  getMyFacturas(rfc): Observable<any>{
+    return this.http.get(this.endpoint + '?' + 'filter={"where":{"rfc_proveedor":"'+rfc+'"}}').pipe(
+    map(this.extractData));
+  }
+
+  addFactura(factura): Observable<any>{
+    console.log(factura);
+    return this.http.post<any>(this.endpoint + '/', JSON.stringify(factura), this.httpOptions).pipe(
+      tap((factura) => console.log(`added factura`)),
+      catchError(this.handleError<any>('addFactura'))
+    );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+
+    // TODO: send the error to remote logging infrastructure
+    console.error(error); // log to console instead
+
+    // TODO: better job of transforming error for user consumption
+    console.log(`${operation} failed: ${error.message}`);
+
+    // Let the app keep running by returning an empty result.
+    return of(result as T);
+  };
+}
+
     getFacturaStatus(){
       return[{
         exitosas: "424",
@@ -35,71 +67,6 @@ export class FacturasService {
         canceladas: "50"
 
       }];
-    }
-
-    getFacturas()
-    {
-    	return[{
-        id:"1",
-        proveedor: "Fomento Económico Mexicano S.A.B. de C.V.",
-        cliente: "Pedro",
-        direccion_proveedor: "México",
-        direccion_cliente: "México",
-        rfc_Cliente: "Afkgneòari",
-        rfc_proveedor: "BVoejgno",
-        fecha: "12-03-18",
-        concepto: ["CocaCola","Sprite"],
-        cantidad: [200,100],
-        precio_unitario: [5,5],
-        importe: [1000,500],
-        impuesto: 150,
-        total: 1650,
-        firmaDigital: "neijfbvnoejnbeo",
-        selloDigital: "ñeiubnroutbn",
-        estatus: "Exitoso"
-    	},{
-        id:"2",
-        proveedor: "Fomento Económico Mexicano S.A.B. de C.V.",
-        cliente: "Juan",
-        direccion_proveedor: "México",
-        direccion_cliente: "México",
-        rfc_Cliente: "Afkgneòari",
-        rfc_proveedor: "BVoejgno",
-        fecha: "12-03-18",
-        concepto: ["CocaCola","Sprite"],
-        cantidad: [200,100],
-        precio_unitario: [5,5],
-        importe: [1000,500],
-        impuesto: 230,
-        total: 10200,
-        firmaDigital: "neijfbvnoejnbeo",
-        selloDigital: "ñeiubnroutbn",
-        estatus: "Pendiente"
-    	},{
-        id:"3",
-        proveedor: "Fomento Económico Mexicano S.A.B. de C.V.",
-        cliente: "Maria",
-        direccion_proveedor: "México",
-        direccion_cliente: "México",
-        rfc_Cliente: "Afkgneòari",
-        rfc_proveedor: "BVoejgno",
-        fecha: "12-03-18",
-        concepto: ["CocaCola","Sprite"],
-        cantidad: [200,100],
-        precio_unitario: [5,5],
-        importe: [1000,500],
-        impuesto: 320,
-        total: 5500,
-        firmaDigital: "neijfbvnoejnbeo",
-        selloDigital: "ñeiubnroutbn",
-        estatus: "Cancelada"
-    	}
-
-    	];
-    }
-
-    getFacturaById(id: string){
-
     }
 
     getMisFacturas(){

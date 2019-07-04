@@ -8,7 +8,8 @@ export class Empresa {
     public correo: string,
     public contrasena: string,
     public actaConstitutiva: string,
-    public estadoDeCuenta: string
+    public estadoDeCuenta: string,
+    public cliente?: Array<string>
   ) {  }
 
 }
