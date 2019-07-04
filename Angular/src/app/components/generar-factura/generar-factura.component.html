@@ -41,18 +41,18 @@
     </div>
 
     <div class="form-group">
-      <label for="cliente">{{'Generate.client' | translate }}</label>
-      <select class="form-control" id="cliente"
-         required
-         [(ngModel)]="facturaModel.cliente" name="cliente"
-         #cliente="ngModel">
-        <option></option>
-        <option *ngFor="let cliente of clientes" [value]="cliente">{{cliente}}</option>
-
-      </select>
-      <div [hidden]="cliente.valid || cliente.pristine"
-           class="alert alert-danger">
-          {{'Generate.client' | translate }} {{'Generate.required' | translate }}
+        <label for="cliente">{{'Generate.client' | translate }}</label>
+        <select class="form-control" id="cliente"
+           required
+           [(ngModel)]="facturaModel.cliente" name="cliente"
+           #cliente="ngModel">
+          <option></option>
+          <option *ngFor="let cliente of clientes" [value]="cliente">{{cliente}}</option>
+        </select>
+        <div [hidden]="cliente.valid || cliente.pristine"
+             class="alert alert-danger">
+            {{'Generate.client' | translate }} {{'Generate.required' | translate }}
+        </div>
       </div>
       <div class="form-group">
         <label for="direccion_cliente">{{'Generate.dir client' | translate }}</label>
@@ -126,24 +126,29 @@
            {{'Concept.name' | translate }} {{'Concept.required' | translate }}
         </div>
       </div>
-      <div class="form-group">
-        <label for="cantidad">{{'Concept.quantity' | translate }}</label>
-        <input type="number" class="form-control" id="cantidad"
-               required
-               [(ngModel)]="conceptoModel.cantidad" name="cantidad"
-               #cantidad="ngModel">
-        <div [hidden]="cantidad.valid || cantidad.pristine"
 
-        <label for="impuesto">{{'Generate.taxes' | translate }}</label>
+        <div class="form-group">
+          <label for="impuesto">{{'Concept.quantity' | translate }}</label>
+          <input type="number" class="form-control" id="cantidad"
+                 required
+                 [(ngModel)]="conceptoModel.cantidad" name="cantidad"
+                 #cantidad="ngModel">
+          <div [hidden]="cantidad.valid || cantidad.pristine"
+               class="alert alert-danger">
+             {{'Concept.quantity' | translate }} {{'Concept.required' | translate }}
+          </div>
+        </div>
+
+        <label for="impuesto">{{'Concept.taxes' | translate }}</label>
         <input type="number" class="form-control" id="impuesto"
                required
-               [(ngModel)]="facturaModel.impuesto" name="impuesto"
+               [(ngModel)]="conceptoModel.impuesto" name="impuesto"
                #impuesto="ngModel">
         <div [hidden]="impuesto.valid || impuesto.pristine"
              class="alert alert-danger">
-           {{'Concept.quantity' | translate }} {{'Concept.required' | translate }}
+           {{'Concept.taxes' | translate }} {{'Concept.required' | translate }}
         </div>
-      </div>
+
       <div class="form-group">
         <label for="precio_unitario">{{'Concept.price' | translate }}</label>
         <input type="number" class="form-control" id="precio_unitario"
