@@ -52,6 +52,12 @@ export class Cliente extends Entity {
   })
   estadoDeCuenta: string;
 
+  @property({
+    type: 'string',
+    required: true,
+  })
+  role: string;
+
 
   constructor(data?: Partial<Cliente>) {
     super(data);

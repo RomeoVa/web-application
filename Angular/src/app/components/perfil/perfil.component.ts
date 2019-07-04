@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Empresa} from '../../models/empresa';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'perfil',

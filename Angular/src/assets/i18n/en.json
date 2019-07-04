@@ -37,7 +37,7 @@
     "date": "Date",
     "amount": "Amount",
     "status": "Status",
-    "accion": "Accions",
+    "action": "Actions",
     "name": "Name",
     "lastname": "Lastname"
   },

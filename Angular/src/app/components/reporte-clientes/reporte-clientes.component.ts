@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ClientesService}  from '../../services/clientes.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'reporte-clientes',

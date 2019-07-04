@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter   } from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'registro-usuario',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroUsuarioComponent implements OnInit {
 
-  constructor() { }
+  public activeLang:string;
+
+  @Output() TranslateEvent = new EventEmitter<string>();
+
+  constructor(){
+  	}
 
   ngOnInit() {
+
+  }
+
+  Lenguaje(lang) {
+    this.activeLang = lang;
+    this.TranslateEvent.emit(this.activeLang);
   }
 
 }

@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<!--<div>
+<!--<div *ngIf="!isLoggedIn && !Registering">
   <body class="bg-gradient-primary">
     <div class="container">
       <login (LoggedInEvent) = "leDiClick($event)"
@@ -10,8 +10,8 @@
   </body>
 </div>-->
 
-<!--<div *ngIf="!isLoggedIn && Registering">
-  <registro-usuario></registro-usuario>
+<!--<div>
+  <registro-usuario (TranslateEvent)="cambiarLenguaje($event)"></registro-usuario>
   <router-outlet (RegisteringEvent) = "leDiClick2($event)"></router-outlet>
 </div>-->
 
@@ -30,6 +30,4 @@
     </div>
 
     <app-footer></app-footer>
-
-  </div>
 </div>
