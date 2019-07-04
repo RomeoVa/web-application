@@ -54,27 +54,27 @@
            class="alert alert-danger">
           {{'Generate.client' | translate }} {{'Generate.required' | translate }}
       </div>
+      <div class="form-group">
+        <label for="direccion_cliente">{{'Generate.dir client' | translate }}</label>
+        <input type="text" class="form-control" id="direccion_cliente"
+                required
+                [(ngModel)]="facturaModel.direccion_cliente" name="direccion_cliente"
+                #direccion_cliente="ngModel">
+         <div [hidden]="direccion_cliente.valid || direccion_cliente.pristine"
+              class="alert alert-danger">
+              {{'Generate.dir client' | translate }} {{'Generate.required' | translate }}
+         </div>
     </div>
 
-    <div class="form-group">
-      <label for="direccion_proveedor">{{'Generate.dir client' | translate }}</label>
-      <input type="text" class="form-control" id="direccion_proveedor"
-              required
-              [(ngModel)]="facturaModel.direccion_proveedor" name="direccion_proveedor"
-              #direccion_proveedor="ngModel">
-       <div [hidden]="direccion_proveedor.valid || direccion_proveedor.pristine"
-            class="alert alert-danger">
-            {{'Generate.dir client' | translate }} {{'Generate.required' | translate }}
-       </div>
-    </div>
+
 
     <div class="form-group">
-      <label for="rfc_proveedor">{{'Generate.rfc client' | translate }}</label>
-      <input type="text" class="form-control" id="rfc_proveedor"
+      <label for="rfc_cliente">{{'Generate.rfc client' | translate }}</label>
+      <input type="text" class="form-control" id="rfc_cliente"
               required
-              [(ngModel)]="facturaModel.rfc_proveedor" name="rfc_proveedor"
+              [(ngModel)]="facturaModel.rfc_cliente" name="rfc_cliente"
               #rfc_proveedor="ngModel">
-       <div [hidden]="rfc_proveedor.valid || rfc_proveedor.pristine"
+       <div [hidden]="rfc_cliente.valid || rfc_cliente.pristine"
             class="alert alert-danger">
             {{'Generate.rfc client' | translate }} {{'Generate.required' | translate }}
        </div>
@@ -133,6 +133,13 @@
                [(ngModel)]="conceptoModel.cantidad" name="cantidad"
                #cantidad="ngModel">
         <div [hidden]="cantidad.valid || cantidad.pristine"
+
+        <label for="impuesto">{{'Generate.taxes' | translate }}</label>
+        <input type="number" class="form-control" id="impuesto"
+               required
+               [(ngModel)]="facturaModel.impuesto" name="impuesto"
+               #impuesto="ngModel">
+        <div [hidden]="impuesto.valid || impuesto.pristine"
              class="alert alert-danger">
            {{'Concept.quantity' | translate }} {{'Concept.required' | translate }}
         </div>

@@ -3,11 +3,10 @@ import {Entity, model, property} from '@loopback/repository';
 @model({settings: {}})
 export class Factura extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
-    required: true,
   })
-  id: number;
+  _id: string;
 
   @property({
     type: 'string',
@@ -46,10 +45,17 @@ export class Factura extends Entity {
   rfc_proveedor: string;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
   })
   fecha: string;
+
+  @property({
+    type: 'array',
+    itemType: 'object',
+    required: true,
+  })
+  concepto: object[];
 
   @property({
     type: 'number',
@@ -80,13 +86,6 @@ export class Factura extends Entity {
     required: true,
   })
   estatus: string;
-
-  @property({
-    type: 'array',
-    itemType: 'object',
-    required: true,
-  })
-  concepto: object[];
 
 
   constructor(data?: Partial<Factura>) {

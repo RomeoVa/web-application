@@ -2,6 +2,7 @@ import { Component, OnInit,Input} from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import {FacturasService}  from '../../services/facturas.service';
 import {Factura} from '../../models/factura'
+import {Concepto} from '../../models/concepto';
 
 @Component({
   selector: 'factura',
@@ -10,7 +11,8 @@ import {Factura} from '../../models/factura'
 })
 export class FacturaComponent implements OnInit {
 
-  facturaModel;
+  facturaModel:Factura;
+  conceptos: Concepto[];
   facturas;
   id:string;
   sub;
@@ -23,15 +25,15 @@ export class FacturaComponent implements OnInit {
 		             console.log(params);
 		             this.id = params.get('id');
 		     	   });
-		  		this.facturas = facturasService.getFacturas();
 
-          for(var i = 0; i<this.facturas.length; i++) {
-            if(this.facturas[i].id == this.id){
-              this.facturaModel = this.facturas[i];
-              break;
+             this.facturaModel = new Factura();
+             this.conceptos = new Array();
 
-            }
-          }
+             facturasService.getFacturaById(this.id).subscribe((data: {}) => {
+               console.log(data);
+               this.facturaModel = data;
+               this.conceptos = this.facturaModel.concepto;
+             });
 
   }
 

@@ -57,6 +57,12 @@ export class Empresa extends Entity {
   })
   role: string;
 
+  type: 'array',
+  itemType: 'string',
+  required: true,
+})
+cliente: string[];
+
 
   constructor(data?: Partial<Empresa>) {
     super(data);

@@ -1,15 +1,15 @@
 export class Factura {
 
   constructor(
-    public id: number,
+    public _id?: string,
     public proveedor?: string,
     public cliente?: string,
     public direccion_proveedor?: string,
     public direccion_cliente?: string,
-    public rfc_Cliente?: string,
+    public rfc_cliente?: string,
     public rfc_proveedor?: string,
     public fecha?: string,
-    public conceptos?: Array<Object>,
+    public concepto?: Array<Object>,
     public impuesto?: number,
     public total?: number,
     public firmaDigital?: string,

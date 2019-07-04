@@ -5,7 +5,7 @@ import {inject} from '@loopback/core';
 
 export class FacturaRepository extends DefaultCrudRepository<
   Factura,
-  typeof Factura.prototype.id,
+  typeof Factura.prototype._id,
   FacturaRelations
 > {
   constructor(

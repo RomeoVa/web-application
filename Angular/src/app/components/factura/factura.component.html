@@ -11,7 +11,7 @@
             <table>
               <tr>
                 <td>
-                  <div style="height:500px; overflow:auto;">
+                  <div style="height:400px; overflow:auto;">
                     <table>
                       <tr>
                         <td>{{'Generate.provider' | translate }}:</td>
@@ -76,35 +76,17 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-sm ">
+            <table class="table table-sm fixed_header">
               <thead>
                 <tr>
-                  <th>Concepto</th>
-                  <th>Cantidad</th>
-                  <th>Precio Unitario</th>
-                  <th>Importe</th>
+                  <th>{{'Concept.title' | translate }}</th>
+                  <th>{{'Concept.quantity' | translate }}</th>
+                  <th>{{'Concept.price' | translate }}</th>
+                  <th>{{'Concept.amount' | translate }}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                </tr>
-                <tr>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                </tr>
-                <tr>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                  <td>.</td>
-                </tr>
-
+                <tr *ngFor="let concepto of conceptos" tabla-conceptos [concepto]="concepto"></tr>
               </tbody>
             </table>
           </div>

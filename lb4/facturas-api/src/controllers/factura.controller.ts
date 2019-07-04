@@ -92,7 +92,7 @@ export class FacturaController {
       },
     },
   })
-  async findById(@param.path.number('id') id: number): Promise<Factura> {
+  async findById(@param.path.string('id') id: string): Promise<Factura> {
     return await this.facturaRepository.findById(id);
   }
 
@@ -104,7 +104,7 @@ export class FacturaController {
     },
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() factura: Factura,
   ): Promise<void> {
     await this.facturaRepository.updateById(id, factura);
@@ -118,7 +118,7 @@ export class FacturaController {
     },
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() factura: Factura,
   ): Promise<void> {
     await this.facturaRepository.replaceById(id, factura);
@@ -131,7 +131,7 @@ export class FacturaController {
       },
     },
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.facturaRepository.deleteById(id);
   }
 }
