@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Factura} from '../../models/factura';
 import {Concepto} from '../../models/concepto';
 import {FacturasService}  from '../../services/facturas.service';
+import {ClientesService}  from '../../services/clientes.service';
 
 import {Router, ActivatedRoute} from '@angular/router';
 
@@ -23,7 +24,7 @@ export class GenerarFacturaComponent implements OnInit {
   clientes =["Romeo","Jesús","Naji"];
   estatus = ["exitosa","pendiente","cancelada"];
 
-  constructor(private router: Router,public facturasService:FacturasService) {
+  constructor(private router: Router,public facturasService:FacturasService,public clientesService:ClientesService) {
 
     this.facturaModel = new Factura();
     this.conceptoModel = new Concepto();
@@ -37,14 +38,17 @@ export class GenerarFacturaComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
+    //Assigning other data to the invoice
     this.facturaModel.total = this.facturaModel.total + this.facturaModel.impuesto;
     this.facturaModel.concepto = this.conceptos;
     this.facturaModel.firmaDigital = "cilq3u4bfufb43pqibf4";
     this.facturaModel.selloDigital = "fo3q4834f3i95ytt303";
 
+    //Assigning status to the invoice
     this.value = Math.floor(Math.random() * 3);
     this.facturaModel.estatus = this.estatus[this.value];
 
+    //Sending the invoice to the server
     this.facturasService.addFactura(this.facturaModel).subscribe(factura => this.facturas.push(factura));
 
     console.log(this.facturaModel);

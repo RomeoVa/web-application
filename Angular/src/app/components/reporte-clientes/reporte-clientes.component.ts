@@ -16,7 +16,9 @@ export class ReporteClientesComponent implements OnInit {
 
     //this.clientes = clientesService.getClientesByEmpresa();
     this.clientes = new Array();
-    this.clientes = ["sdsdsds","defefefef"];
+    this.clientes.push("Vbier83bf");
+    this.clientes.push("GOAJ971098I5I");
+    this.clientes.splice(1,1);
     console.log(this.clientes);
   }
 

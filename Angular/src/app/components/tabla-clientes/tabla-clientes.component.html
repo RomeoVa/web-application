@@ -1,4 +1,4 @@
-<td>{{cliente}}</td>
+<td>{{clienteModel.rfc}}</td>
 <td>{{clienteModel.nombre}}</td>
 <td>{{clienteModel.apellido}}</td>
 <td class="Acciones">
@@ -28,10 +28,11 @@
     </button>
   </div>
   <div class="modal-body">
-    <p>RFC: {{cliente.rfc}}</p>
-    <p>Nombre: {{cliente.nombre}}</p>
-    <p>Apellido: {{cliente.apellido}}</p>
-    <p>Dirección: {{cliente.direccion}}</p>
+    <p>RFC: {{clienteModel.rfc}}</p>
+    <p>Nombre: {{clienteModel.nombre}}</p>
+    <p>Apellido: {{clienteModel.apellido}}</p>
+    <p>Dirección: {{clienteModel.direccion}}</p>
+    <p>Correo: {{clienteModel.correo}}</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
