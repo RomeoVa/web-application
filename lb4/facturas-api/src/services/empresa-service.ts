@@ -16,12 +16,12 @@ export class MyUserService implements UserService<Empresa, CredentialsEmpresa> {
 
   async verifyCredentials(credentials: CredentialsEmpresa): Promise<Empresa> {
     const foundUser = await this.userRepository.findOne({
-      where: {correo: credentials.correo},
+      where: {rfc: credentials.rfc},
     });
 
     if (!foundUser) {
       throw new HttpErrors.NotFound(
-        `User with email ${credentials.correo} not found.`,
+        `User with rfc ${credentials.rfc} not found.`,
       );
     }
     const passwordMatched = await this.passwordHasher.comparePassword(

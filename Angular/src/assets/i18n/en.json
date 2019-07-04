@@ -92,7 +92,7 @@
     "enter": "Login",
     "register": "Create Your Account!",
     "password": "Password",
-    "mail": "Enter Email Address..."
+    "mail": "Enter RFC..."
   }
 
 }

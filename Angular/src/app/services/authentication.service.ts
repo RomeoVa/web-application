@@ -19,13 +19,13 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
-    login(correo: string, contrasena: string) {
-        return this.http.post<any>(`http://localhost:3000/empresas/login/`, {correo, contrasena})
+    login(rfc: string, contrasena: string) {
+        return this.http.post<any>(`http://localhost:3000/empresas/login/`, {rfc, contrasena})
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({correo: correo}));
+                    localStorage.setItem('currentUser', JSON.stringify({rfc:rfc}));
                     this.currentUserSubject.next(user);
                 }
 

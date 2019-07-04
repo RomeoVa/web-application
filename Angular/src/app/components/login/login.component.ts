@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error = '';
-    correo;
+    rfc;
     contrasena;
 
   public activeLang:string;
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
       this.submitted = true;
       this.loading = true;
-      console.log(""+this.correo +" " +this.contrasena);
-      this.authenticationService.login(this.correo, this.contrasena)
+      console.log(""+this.rfc +" " +this.contrasena);
+      this.authenticationService.login(this.rfc, this.contrasena)
           .pipe(first())
           .subscribe(
               data => {
