@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" *ngIf="currentUser">
 
   <!-- Topbar Toggle -->
   <button id="sidebarToggleTop" class="btn btn-link  rounded-circle navbar-toggle collapsed"
@@ -9,7 +9,7 @@
   <!-- Topbar User -->
   <div class="nav-item dropdown no-arrow col-md-1 col-sm-6 col-lg-4 ghost">
     <a class="nav-link dropdown-toggle" href="menu" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <h1 class="h3 text-gray-800 sidebar-brand-text mx-3">Nombre Usuario</h1>
+      <h1 class="h3 text-gray-800 sidebar-brand-text mx-3">{{username}}</h1>
     </a>
   </div>
 
@@ -68,7 +68,7 @@
     </div>
 
     <div class="nav-item">
-      <a class="nav-link" href="login">
+      <a class="nav-link" (click)="logout()">>
         <fa class="fas fa-fw" name="sign-out"></fa>
         <span>{{'TopBar.logout' | translate }}</span></a>
     </div>

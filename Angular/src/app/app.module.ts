@@ -121,10 +121,10 @@ const routes: Routes = [
     TablaConceptosComponent
   ],
   imports: [
+    FormsModule,
     RouterModule.forRoot(routes),
     AngularFontAwesomeModule,
     BrowserModule,
-    FormsModule,
     ChartsModule,
     TooltipModule.forRoot(),
     NgxAsideModule,

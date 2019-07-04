@@ -7,17 +7,15 @@ import { AuthenticationService } from '../../services/authentication.service';
 
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: 'login.component.html',
 })
 export class LoginComponent implements OnInit {
   loading = false;
     submitted = false;
     returnUrl: string;
     error = '';
-    correo:string;
-    contrasena:string;
+    correo;
+    contrasena;
 
   public activeLang:string;
 

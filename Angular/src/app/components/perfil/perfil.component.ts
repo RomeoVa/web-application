@@ -14,7 +14,7 @@ export class PerfilComponent implements OnInit {
 
   constructor() {
 
-    this.perfilModel = new Empresa("Aksjdfgo23","FEMSA","Fomento Económico Mexicano S.A.B. de C.V.","México","femsa@gmail.com","12345","","");
+    this.perfilModel = new Empresa("Aksjdfgo23", "FEMSA", "Fomento Económico Mexicano S.A.B. de C.V.", "México", "femsa@gmail.com", "12345", "", "");
 
   }
 

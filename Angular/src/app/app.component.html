@@ -16,12 +16,13 @@
 </div>-->
 
 <div id="wrapper">
-  <nav-bar [collapseMessage]="isCollapsed"></nav-bar>
+  <nav-bar [collapseMessage]="isCollapsed" [currentUser]="currentUser"></nav-bar>
 
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <top-bar (Collapsing)="receiveCollapse($event)"
-      (TranslateEvent)="cambiarLenguaje($event)"></top-bar>
+      (TranslateEvent)="cambiarLenguaje($event)"
+      [currentUser]="currentUser"></top-bar>
 
       <div class="container-fluid">
         <router-outlet></router-outlet>
