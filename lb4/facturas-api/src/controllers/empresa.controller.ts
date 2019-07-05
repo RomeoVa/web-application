@@ -40,7 +40,7 @@ export class EmpresaController {
   @post('/empresas')
     async create(@requestBody() user: Empresa): Promise<Empresa> {
       // ensure a valid email value and password value
-      validateCredentials(_.pick(user, ['correo', 'contrasena']));
+      validateCredentials(_.pick(user, ['rfc', 'contrasena']));
 
       // encrypt the password
       user.contrasena = await this.passwordHasher.hashPassword(user.contrasena);
@@ -178,7 +178,7 @@ export class EmpresaController {
       // create a JSON Web Token based on the user profile
       const token = await this.jwtService.generateToken(userProfile);
 
-      return {token, user, userProfile};
+      return {token};
     }
   }
 

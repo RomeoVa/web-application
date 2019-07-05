@@ -9,9 +9,9 @@ export function validateCredentials(credentials: CredentialsEmpresa) {
   }*/
 
   // Validate Email
-  if (!credentials.rfc.length == 12 ) {
+  /*if (!credentials.rfc.length == 12 ) {
     throw new HttpErrors.UnprocessableEntity('invalid rfc');
-  }
+  }*/
 
   // Validate Password Length
   if (credentials.contrasena.length < 8) {
