@@ -178,7 +178,7 @@ export class EmpresaController {
       // create a JSON Web Token based on the user profile
       const token = await this.jwtService.generateToken(userProfile);
 
-      return {token};
+      return {token, user};
     }
   }
 
