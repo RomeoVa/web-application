@@ -101,7 +101,51 @@ export class EmpresaController {
       return currentUserProfile;
     }
 
+    @put('/empresas/{id}', {
+      responses: {
+        '204': {
+          description: 'Empresa PUT success',
+        },
+      },
+    })
+    async replaceById(
+      @param.path.string('id') id: string,
+      @requestBody() empresa: Empresa,
+    ): Promise<void> {
+      await this.userRepository.replaceById(id, empresa);
+    }
 
+    @get('/empresas/count', {
+      responses: {
+        '200': {
+          description: 'Empresa model count',
+          content: {'application/json': {schema: CountSchema}},
+        },
+      },
+    })
+    async count(
+      @param.query.object('where', getWhereSchemaFor(Empresa)) where?: Where<Empresa>,
+    ): Promise<Count> {
+      return await this.userRepository.count(where);
+    }
+
+    @get('/empresas', {
+      responses: {
+        '200': {
+          description: 'Array of Empresa model instances',
+          content: {
+            'application/json': {
+              schema: {type: 'array', items: {'x-ts-type': Empresa}},
+            },
+          },
+        },
+      },
+    })
+    async find(
+      @param.query.object('filter', getFilterSchemaFor(Empresa)) filter?: Filter<Empresa>,
+    ): Promise<Empresa[]> {
+      return await this.userRepository.find(filter);
+    }
 
     @post('/empresas/login', {
       responses: {

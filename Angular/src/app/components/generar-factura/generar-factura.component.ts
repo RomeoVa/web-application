@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Factura} from '../../models/factura';
 import {Concepto} from '../../models/concepto';
+import {Empresa} from '../../models/empresa';
 import {FacturasService}  from '../../services/facturas.service';
-import {ClientesService}  from '../../services/clientes.service';
+import {EmpresaService}  from '../../services/empresa.service';
 
 import {Router, ActivatedRoute} from '@angular/router';
 
@@ -14,6 +15,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class GenerarFacturaComponent implements OnInit {
 
   facturaModel:Factura;
+  empresaModel:Empresa;
   conceptoModel:Concepto;
   conceptos: Concepto[];
   facturas:Factura[];
@@ -24,7 +26,7 @@ export class GenerarFacturaComponent implements OnInit {
   clientes =["Romeo","Jesús","Naji"];
   estatus = ["exitosa","pendiente","cancelada"];
 
-  constructor(private router: Router,public facturasService:FacturasService,public clientesService:ClientesService) {
+  constructor(private router: Router,public facturasService:FacturasService,public empresaService:EmpresaService) {
 
     this.facturaModel = new Factura();
     this.conceptoModel = new Concepto();
@@ -77,6 +79,13 @@ export class GenerarFacturaComponent implements OnInit {
 
     console.log(this.conceptos);
     this.conceptoModel = new Concepto();
+
+  }
+
+  agregarCliente(){
+
+    this.empresaService.getEmpresaById("rfc").subscribe(empresa =>
+      this.empresaModel = empresa);
 
   }
 
