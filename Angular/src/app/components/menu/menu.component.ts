@@ -11,10 +11,16 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  empresaModel;
+  empresaModel:Empresa;
+  rfc = JSON.parse(localStorage.getItem('currentUser')).rfc;
 
   constructor(empresaService:EmpresaService) {
-    this.empresaModel = empresaService.getEmpresaInfo();
+
+    this.empresaModel = new Empresa();
+    empresaService.getEmpresaById(this.rfc).subscribe((empresa: {}) => {
+      console.log(this.empresaModel);
+      this.empresaModel = empresa
+    });
   }
 
   ngOnInit() {

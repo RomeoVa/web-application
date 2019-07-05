@@ -25,6 +25,8 @@ export class GenerarFacturaComponent implements OnInit {
   submitted = false;
   clientes =["Romeo","Jesús","Naji"];
   estatus = ["exitosa","pendiente","cancelada"];
+  rfc = JSON.parse(localStorage.getItem('currentUser')).rfc;
+  clientesEmpresa: Array<string>;
 
   constructor(private router: Router,public facturasService:FacturasService,public empresaService:EmpresaService) {
 
@@ -84,8 +86,10 @@ export class GenerarFacturaComponent implements OnInit {
 
   agregarCliente(){
 
-    this.empresaService.getEmpresaById("rfc").subscribe(empresa =>
-      this.empresaModel = empresa);
+    this.empresaService.getEmpresaById(this.rfc).subscribe((data: any) => {
+      console.log(data);
+      //this.facturas2 = data;
+    });
 
   }
 

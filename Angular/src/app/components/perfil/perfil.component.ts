@@ -10,16 +10,17 @@ import {EmpresaService}  from '../../services/empresa.service';
 })
 export class PerfilComponent implements OnInit {
 
-  perfilModel;
+  perfilModel:Empresa;
   perfil:Empresa;
   empresa:Empresa[];
   submitted = false;
 
+  rfc = JSON.parse(localStorage.getItem('currentUser')).rfc;
+
   constructor(public empresaService:EmpresaService) {
 
-    //empresaService.getEmpresaById(rfc).subscribe(empresa =>
-      //this.perfilModel = empresa);
-    this.perfilModel = new Empresa("Aksjdfgo23", "FEMSA", "Fomento Económico Mexicano S.A.B. de C.V.", "México", "femsa@gmail.com", "12345", "", "");
+
+    this.perfilModel = new Empresa();
 
   }
 
@@ -31,6 +32,11 @@ export class PerfilComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.empresaService.getEmpresaById(this.rfc).subscribe((empresa: {}) => {
+      console.log(this.perfilModel);
+      this.perfilModel = empresa
+    });
+
   }
 
 
