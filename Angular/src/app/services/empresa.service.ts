@@ -31,6 +31,10 @@ export class EmpresaService {
     );
    }
 
+   getEmpresaById(rfc): Observable<any>{
+       return this.http.get(this.endpoint + '/' + rfc).pipe(
+       map(this.extractData));
+   }
 
 
   private handleError<T> (operation = 'operation', result?: T) {
