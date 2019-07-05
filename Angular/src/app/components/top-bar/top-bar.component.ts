@@ -15,7 +15,7 @@ export class TopBarComponent implements OnInit {
   @Input() currentUser:Empresa;
   public activeLang:string;
   isCollapsed = false;
-  username = JSON.parse(localStorage.getItem('currentUser'));
+  username = JSON.parse(localStorage.getItem('currentUser')).rfc;
 
   @Output() Collapsing = new EventEmitter<boolean>();
   @Output() TranslateEvent = new EventEmitter<string>();

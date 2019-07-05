@@ -4,7 +4,7 @@ import {MongoConnDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
 export type CredentialsEmpresa = {
-  correo: string;
+  rfc: string;
   contrasena: string;
 }
 
