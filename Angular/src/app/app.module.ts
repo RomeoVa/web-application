@@ -91,15 +91,12 @@ const routes: Routes = [
       },{
           path: 'registro-empresa',
           component: RegistroEmpresaComponent,
-          canActivate: [AuthGuard]
       },{
           path: 'registro-clientes',
           component: RegistroClientesComponent,
-          canActivate: [AuthGuard]
       },{
           path: 'registro-usuario',
           component: RegistroUsuarioComponent,
-          canActivate: [AuthGuard]
       }
 ];
 

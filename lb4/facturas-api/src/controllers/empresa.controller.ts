@@ -112,6 +112,8 @@ export class EmpresaController {
       @param.path.string('id') id: string,
       @requestBody() empresa: Empresa,
     ): Promise<void> {
+      // encrypt the password
+      empresa.contrasena = await this.passwordHasher.hashPassword(empresa.contrasena);
       await this.userRepository.replaceById(id, empresa);
     }
 
