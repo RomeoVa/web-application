@@ -18,8 +18,8 @@ export class MenuComponent implements OnInit {
 
     this.empresaModel = new Empresa();
     empresaService.getEmpresaById(this.rfc).subscribe((empresa: {}) => {
-      console.log(this.empresaModel);
       this.empresaModel = empresa
+      console.log(this.empresaModel);
     });
   }
 

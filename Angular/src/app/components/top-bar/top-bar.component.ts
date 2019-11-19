@@ -15,7 +15,7 @@ export class TopBarComponent implements OnInit {
   @Input() currentUser:Empresa;
   public activeLang:string;
   isCollapsed = false;
-  username = JSON.parse(localStorage.getItem('currentUser')).rfc;
+  username:string;
 
   @Output() Collapsing = new EventEmitter<boolean>();
   @Output() TranslateEvent = new EventEmitter<string>();
@@ -24,10 +24,12 @@ export class TopBarComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService){
+
+        this.username = JSON.parse(localStorage.getItem('currentUser'));
+        console.log(this.username);
   	}
 
   ngOnInit() {
-    console.log(this.username);
   }
 
   Collapse(){
