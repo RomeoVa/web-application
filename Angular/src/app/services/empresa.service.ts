@@ -36,6 +36,13 @@ export class EmpresaService {
        map(this.extractData));
    }
 
+   addEmpresa(empresa): Observable<any>{
+    return this.http.post<any>(this.endpoint + '/', JSON.stringify(empresa), this.httpOptions).pipe(
+      tap((empresa) => console.log(`added user`)),
+      catchError(this.handleError<any>('addUser'))
+    );
+   }
+
 
   private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
@@ -51,15 +58,4 @@ export class EmpresaService {
   };
  }
 
-  getEmpresaInfo(){
-    return[{
-      nombre:"FENSA",
-      razon_social:"Fomento Económico Mexicano S.A.B. de C.V.",
-      rfc:"FSE920910CC6",
-      correo:"femsa@servicios.com",
-      contrasena:"mceoirnv"
-
-     }];
-
-  }
 }

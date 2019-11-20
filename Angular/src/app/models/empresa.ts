@@ -10,6 +10,7 @@ export class Empresa {
     public actaConstitutiva?: string,
     public estadoDeCuenta?: string,
     public token?: string,
+    public role?: string,
     public cliente?: Array<string>
   ) {  }
 

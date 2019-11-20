@@ -41,13 +41,13 @@ export class Empresa extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   actaConstitutiva: string;
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   estadoDeCuenta: string;
 
@@ -60,7 +60,7 @@ export class Empresa extends Entity {
   @property({
     type: 'array',
     itemType: 'string',
-    required: true,
+    required: false,
   })
   cliente: string[];
 
