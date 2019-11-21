@@ -3,6 +3,7 @@ import {ClientesService}  from '../../services/clientes.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {Cliente} from '../../models/cliente';
 import {EmpresaService}  from '../../services/empresa.service';
+import { Empresa } from 'src/app/models/empresa';
 
 @Component({
   selector: 'reporte-clientes',
@@ -12,14 +13,15 @@ import {EmpresaService}  from '../../services/empresa.service';
 })
 export class ReporteClientesComponent implements OnInit {
 
-  clientes: Array<string>;
+  clientes: Array<Object>;
+  empresaModel:Empresa;
   rfc = JSON.parse(localStorage.getItem('currentUser')).rfc;
 
   constructor(clientesService: ClientesService,empresaService:EmpresaService) {
 
     empresaService.getEmpresaById(this.rfc).subscribe((empresa: any) => {
-      console.log(empresa);
-      this.clientes = empresa.clientes;
+      this.empresaModel = empresa
+      this.clientes = this.empresaModel.cliente;
     });
 
     //this.clientes = clientesService.getClientesByEmpresa();

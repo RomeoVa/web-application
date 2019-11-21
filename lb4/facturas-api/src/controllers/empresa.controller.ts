@@ -76,9 +76,7 @@ export class EmpresaController {
       },
     })
     async findById(@param.path.string('empresaId') userId: string): Promise<Empresa> {
-      return this.userRepository.findById(userId, {
-        fields: {contrasena: false},
-      });
+      return this.userRepository.findById(userId);
     }
 
     @get('/empresas/me', {

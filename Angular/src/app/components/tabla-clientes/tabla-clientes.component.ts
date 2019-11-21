@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {ClientesService}  from '../../services/clientes.service';
 import {EmpresaService}  from '../../services/empresa.service';
 import {Cliente} from '../../models/cliente';
+import {Empresa} from '../../models/empresa';
+
 
 @Component({
   selector: '[tabla-clientes]',
@@ -11,41 +13,37 @@ import {Cliente} from '../../models/cliente';
 })
 export class TablaClientesComponent implements OnInit {
 
-  @Input() cliente:string;
+  @Input() cliente:Cliente;
+  @Input() empresaModel:Empresa;
   clienteModel:Cliente;
   index:number;
-  arr: Array<string>;
+  arr:Array<Cliente>;
 
-  constructor(private modalService: NgbModal,public clientesService:ClientesService,public empresaService:EmpresaService) {
+  constructor(private modalService: NgbModal,public clientesService:ClientesService,public empresaService:EmpresaService) {}
 
-    this.clienteModel = new Cliente();
-    this.arr = new Array();
-
-  }
-
-  ngOnInit() {
-    console.log(this.cliente);
-    this.clientesService.getClienteById(this.cliente).subscribe((data: {}) => {
-      console.log(data);
-      this.clienteModel = data[0];
-    });
-
-  }
+  ngOnInit() {}
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
   }
 
   deleteCliente(){
-    for(var _i = 0; _i < this.arr.length; _i++){
-      if(this.arr[_i]==this.cliente){
-        this.index=_i;
-      }
+
+    var index;
+
+    this.arr = this.empresaModel.cliente;
+
+    this.arr.findIndex(x => x.rfc === this.cliente.rfc);
+
+    index = this.arr.findIndex(x => x.rfc === this.cliente.rfc);
+
+    if (index > -1) {
+      this.arr.splice(index, 1);
+
+      this.empresaModel.cliente = this.arr;
     }
-
-    this.arr.splice(this.index,1);
-
-    this.empresaService.updateEmpresa ("rfc", "empresa").subscribe((data: {}) => {
+  
+    this.empresaService.updateEmpresa(this.empresaModel.rfc, this.empresaModel).subscribe((data: {}) => {
       console.log(data);
     });
 

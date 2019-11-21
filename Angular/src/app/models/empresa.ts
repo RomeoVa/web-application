@@ -11,7 +11,7 @@ export class Empresa {
     public estadoDeCuenta?: string,
     public token?: string,
     public role?: string,
-    public cliente?: Array<string>
+    public cliente?: Array<Object>
   ) {  }
 
 }

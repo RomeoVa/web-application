@@ -59,10 +59,10 @@ export class Empresa extends Entity {
 
   @property({
     type: 'array',
-    itemType: 'string',
+    itemType: 'object',
     required: false,
   })
-  cliente: string[];
+  cliente: object[];
 
 
   constructor(data?: Partial<Empresa>) {
