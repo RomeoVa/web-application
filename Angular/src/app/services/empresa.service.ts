@@ -25,7 +25,7 @@ export class EmpresaService {
   }
 
   updateEmpresa (rfc, empresa): Observable<any> {
-    return this.http.put(this.endpoint + '/' + rfc, JSON.stringify(empresa), this.httpOptions).pipe(
+    return this.http.patch(this.endpoint + '/' + rfc, JSON.stringify(empresa), this.httpOptions).pipe(
       tap(_ => console.log(`updated empresa`)),
       catchError(this.handleError<any>('updateEmpresa'))
     );

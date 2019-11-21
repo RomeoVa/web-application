@@ -76,7 +76,9 @@ export class EmpresaController {
       },
     })
     async findById(@param.path.string('empresaId') userId: string): Promise<Empresa> {
-      return this.userRepository.findById(userId);
+      return this.userRepository.findById(userId, {
+        fields: {contrasena: false},
+      });
     }
 
     @get('/empresas/me', {
@@ -99,6 +101,24 @@ export class EmpresaController {
       return currentUserProfile;
     }
 
+    @patch('/empresas/{id}', {
+      responses: {
+        '204': {
+          description: 'Cliente PATCH success',
+        },
+      },
+    })
+    async updateById(
+      @param.path.string('id') id: string,
+      @requestBody() empresa: Empresa,
+    ): Promise<void> {
+      // encrypt the password
+      if(empresa.contrasena != null){
+        empresa.contrasena = await this.passwordHasher.hashPassword(empresa.contrasena);
+      }
+      await this.userRepository.updateById(id, empresa);
+    }
+
     @put('/empresas/{id}', {
       responses: {
         '204': {
@@ -110,8 +130,6 @@ export class EmpresaController {
       @param.path.string('id') id: string,
       @requestBody() empresa: Empresa,
     ): Promise<void> {
-      // encrypt the password
-      empresa.contrasena = await this.passwordHasher.hashPassword(empresa.contrasena);
       await this.userRepository.replaceById(id, empresa);
     }
 
