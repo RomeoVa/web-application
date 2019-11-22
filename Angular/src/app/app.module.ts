@@ -38,6 +38,7 @@ import { TablaConceptosComponent } from './components/tabla-conceptos/tabla-conc
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { ErrorInterceptor   } from './helpers/error.interceptor';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 
 const routes: Routes = [
@@ -95,7 +96,13 @@ const routes: Routes = [
           path: 'registro-clientes',
           component: RegistroClientesComponent,
           canActivate: [AuthGuard]
-      },{
+      },
+      {
+        path: 'cliente/:id',
+        component: ClienteComponent,
+        canActivate: [AuthGuard]
+      },
+      {
           path: 'registro-usuario',
           component: RegistroUsuarioComponent,
       }
@@ -122,7 +129,8 @@ const routes: Routes = [
     GenerarFacturaComponent,
     ChartPieComponent,
     RegistroUsuarioComponent,
-    TablaConceptosComponent
+    TablaConceptosComponent,
+    ClienteComponent
   ],
   imports: [
     FormsModule,

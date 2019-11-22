@@ -66,7 +66,6 @@
       <div class="form-group">
         <label for="password">{{'Register.password' | translate }}</label>
         <input type="password" class="form-control" id="password"
-                required
                 [(ngModel)]="perfilModel.contrasena" name="password"
                 #password="ngModel">
          <div [hidden]="password.valid || password.pristine"

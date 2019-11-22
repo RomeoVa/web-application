@@ -14,6 +14,7 @@ export class RegistroClientesComponent implements OnInit {
   hidden = false;
   perfilModel:Empresa;
   clientModel:Cliente;
+  clientes;
   empresa:Empresa[];
   submitted = false;
 
@@ -26,6 +27,7 @@ export class RegistroClientesComponent implements OnInit {
 
     this.empresaService.getEmpresaById(this.rfc).subscribe((empresa: {}) => {
       this.perfilModel = empresa
+      this.clientes = this.perfilModel.cliente;
     });
 
     
@@ -45,6 +47,7 @@ export class RegistroClientesComponent implements OnInit {
     this.submitted = true;
     this.perfilModel.cliente.push(this.clientModel);
     this.empresaService.updateEmpresa(this.perfilModel.rfc,this.perfilModel).subscribe(empresa => console.log(empresa));
+    this.clientModel = new Cliente();
   }
 
 }
