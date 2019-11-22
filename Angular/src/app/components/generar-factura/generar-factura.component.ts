@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Factura} from '../../models/factura';
 import {Concepto} from '../../models/concepto';
 import {Empresa} from '../../models/empresa';
+import {Cliente} from '../../models/cliente';
 import {FacturasService}  from '../../services/facturas.service';
 import {EmpresaService}  from '../../services/empresa.service';
 
@@ -23,20 +24,30 @@ export class GenerarFacturaComponent implements OnInit {
   value: number;
   public total:number;
   submitted = false;
-  clientes =["Romeo","Jesús","Naji"];
+  clientes;
   estatus = ["exitosa","pendiente","cancelada"];
   rfc = JSON.parse(localStorage.getItem('currentUser')).rfc;
   clientesEmpresa: Array<string>;
+  pos;
 
   constructor(private router: Router,public facturasService:FacturasService,public empresaService:EmpresaService) {
 
     this.facturaModel = new Factura();
+    this.empresaModel = new Empresa();
     this.conceptoModel = new Concepto();
     this.conceptos = new Array();
     this.facturas = new Array();
     this.index = 0;
     this.facturaModel.total = 0;
+    this.clientes = new Array<Cliente>();
 
+    this.empresaService.getEmpresaById(this.rfc).subscribe((data: any) => {
+      this.empresaModel = data;
+      this.clientes = this.empresaModel.cliente;
+    });
+
+    
+  
   }
 
   onSubmit() {
@@ -61,6 +72,21 @@ export class GenerarFacturaComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    
+    
+  }
+
+
+  onChange(newValue): void{
+    
+    if(this.facturaModel.rfc_cliente != null)
+    {
+      this.pos = this.clientes.findIndex(x => x.rfc === this.facturaModel.rfc_cliente);
+
+      this.facturaModel.cliente = this.clientes[this.pos].nombre;
+      this.facturaModel.direccion_cliente = this.clientes[this.pos].direccion;
+    }
   }
 
   newConcepto(){

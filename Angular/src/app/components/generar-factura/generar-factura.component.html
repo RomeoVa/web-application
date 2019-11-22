@@ -41,14 +41,27 @@
     </div>
 
     <div class="form-group">
+
+        <div class="form-group">
+            <label for="rfc_cliente">{{'Generate.rfc client' | translate }}</label>
+              <select class="form-control" id="rfc_cliente"
+                required
+                [(ngModel)]="facturaModel.rfc_cliente" name="rfc_cliente"
+                #rfc_cliente="ngModel"
+                (change)="onChange($event)">
+              <option></option>
+              <option *ngFor="let cliente of clientes" [value]="cliente.rfc">{{cliente.rfc}}</option>
+              </select>
+             <div [hidden]="rfc_cliente.valid || rfc_cliente.pristine"
+                  class="alert alert-danger">
+                  {{'Generate.rfc client' | translate }} {{'Generate.required' | translate }}
+             </div>
+        </div>
         <label for="cliente">{{'Generate.client' | translate }}</label>
-        <select class="form-control" id="cliente"
-           required
-           [(ngModel)]="facturaModel.cliente" name="cliente"
-           #cliente="ngModel">
-          <option></option>
-          <option *ngFor="let cliente of clientes" [value]="cliente">{{cliente}}</option>
-        </select>
+        <input type="text" class="form-control" id="cliente"
+        required
+        [(ngModel)]="facturaModel.cliente" name="cliente"
+        #cliente="ngModel">
         <div [hidden]="cliente.valid || cliente.pristine"
              class="alert alert-danger">
             {{'Generate.client' | translate }} {{'Generate.required' | translate }}
@@ -65,19 +78,6 @@
               {{'Generate.dir client' | translate }} {{'Generate.required' | translate }}
          </div>
     </div>
-
-    <div class="form-group">
-      <label for="rfc_cliente">{{'Generate.rfc client' | translate }}</label>
-      <input type="text" class="form-control" id="rfc_cliente"
-              required
-              [(ngModel)]="facturaModel.rfc_cliente" name="rfc_cliente"
-              #rfc_cliente="ngModel">
-       <div [hidden]="rfc_cliente.valid || rfc_cliente.pristine"
-            class="alert alert-danger">
-            {{'Generate.rfc client' | translate }} {{'Generate.required' | translate }}
-       </div>
-    </div>
-
     <div class="form-group">
       <label for="fecha">{{'Generate.date' | translate }}</label>
       <input type="date" class="form-control" id="fecha"
