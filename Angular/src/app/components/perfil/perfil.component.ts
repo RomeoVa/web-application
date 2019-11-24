@@ -26,7 +26,7 @@ export class PerfilComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.empresaService.updateEmpresa(this.perfilModel.rfc,this.perfilModel).subscribe(empresa => console.log(empresa));
+    this.empresaService.updateEmpresa(this.rfc,this.perfilModel).subscribe(empresa => console.log(empresa));
     console.log(this.perfilModel);
 
   }
